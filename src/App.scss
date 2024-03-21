@@ -1,0 +1,24 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: "Avenir-Medium";
+  src: url("https://db.onlinewebfonts.com/t/2090551770be22b09600a40b0b4673b7.eot");
+  src: url("https://db.onlinewebfonts.com/t/2090551770be22b09600a40b0b4673b7.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/2090551770be22b09600a40b0b4673b7.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/2090551770be22b09600a40b0b4673b7.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/2090551770be22b09600a40b0b4673b7.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/2090551770be22b09600a40b0b4673b7.svg#Avenir-Medium")
+      format("svg");
+}
+body{
+
+  font-family: "Avenir-Medium" ;
+
+}

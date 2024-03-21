@@ -1,0 +1,62 @@
+body{
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+$primary-color:#D0D3D4;
+$secondary-color:#F7F9F9;
+
+.css-1hsz34s-MuiDrawer-docked {
+  .MuiDrawer-paper {
+    background: #34495E  !important;
+  }
+}
+.drawer-header{
+    background: #273746!important;
+}
+.css-12i7wg6-MuiPaper-root-MuiDrawer-paper{
+    background: #34495E  !important;
+}
+.list-items {
+  color: $primary-color;
+  .css-wa5fuu-MuiListItemIcon-root {
+    color: $primary-color !important;
+  }
+}
+.list-items:hover{
+    color: $secondary-color;
+    .css-wa5fuu-MuiListItemIcon-root:hover{
+        color: $secondary-color !important;
+    }
+}
+.drawer-bottom{
+    display: flex;
+    justify-content: space-between;
+    margin-block-start: auto;
+    background: #273746 !important;
+}
+.drawer-bottom{
+    .css-i4bv87-MuiSvgIcon-root {
+        color: $primary-color;
+        &:hover{
+            color: white;
+        }
+   }
+}
+
+
+header{
+    background: #fff !important;
+    color: black !important;
+    box-shadow: none !important;
+}
+a{
+    text-decoration: none;
+    color: $primary-color;
+    &:hover{
+        color: $secondary-color;
+      
+    }
+}
+.dashboard-header{
+    color: black !important;
+}
+

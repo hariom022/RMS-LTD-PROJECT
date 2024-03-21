@@ -1,0 +1,68 @@
+.management-container {
+  .approve-btn {
+    background: #2d622d;
+    color: #fff;
+    margin-left: 5px;
+    margin-right: 10px;
+    &:hover {
+        background: #2d622d;
+    color: #fff;
+      }
+  }
+  .request{
+    background:#fbb2b2;
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid black;
+  }
+  .quotation{
+    background-color: #5a93ab;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 10px;
+    color: #fff;
+  }
+  .amount{
+    background: dimgrey;
+    padding: 5px;
+    border-radius: 10px;
+    color: #fff;
+
+  }
+
+  .reject-btn {
+    background-color: #d93737;
+    color: #fff;
+    &:hover {
+      color: #fff;
+      background-color: black;
+    }
+  }
+}
+
+h6{
+    background:#fbb2b2;
+    display:flex ; 
+    justify-content: center;
+    border-radius: 50px;
+    margin: 20px 0px;
+    font-weight: bold;
+    padding: 10px 20px;
+  
+}
+
+@media only screen and (max-width: 784px){
+    .management-container{
+        display: block !important;
+        justify-content: center !important;
+        text-align: center !important;
+
+        .approve-btn{
+            margin: 20px 0px;
+        }
+        .reject-btn {
+            margin: 20px 0px;
+        }
+    }
+
+}

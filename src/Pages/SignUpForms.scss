@@ -1,0 +1,22 @@
+.signup-form-container{
+    background-color: #fff;
+    padding: 50px 20px;
+    box-shadow: 2px 2px 20px ;
+    border-radius: 10px;
+}
+form {
+    a{
+        color: blue;
+        text-decoration: underline;
+        text-align: center;
+
+        &:hover{
+            color: blue;
+        text-decoration: underline;
+        }
+        
+    }
+    button{
+        background: linear-gradient(to right, #2E86C1, #c332c3);
+    }
+}
