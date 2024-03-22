@@ -52,7 +52,7 @@ const Management = () => {
         >
           <Typography
             variant="h6"
-            sx={{ background: "#fbb2b2", borderRadius: "50px" }}
+            sx={{ background: "#139191",color:'#fff',borderRadius:'10px'  }}
           >
             Delivery / Good Receipt
           </Typography>

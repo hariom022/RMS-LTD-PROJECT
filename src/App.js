@@ -13,6 +13,8 @@ import Invoice from "./Pages/Invoice";
 import GoodRecipts from "./Pages/GoodReceipts";
 import LoginForms from "./Pages/LoginForms";
 import SignUpForm from "./Pages/SignUpForm";
+import QuotationDetails from "./Pages/QuotationDetails";
+import DetailedGoodReceipt from "./Pages/DetailedGoodReceipt";
 
 const App = () => {
   return (
@@ -31,6 +33,8 @@ const App = () => {
         <Route path="/goodRecipts" element={<GoodRecipts/>}/>
         <Route path="/login" element={<LoginForms/>}/>
         <Route path="/signup" element={<SignUpForm/>}/>
+        <Route path="/quotation" element={<QuotationDetails/>}/>
+        <Route path="/detailedGoodReceipt" element={<DetailedGoodReceipt/>}/>
         </Routes>
         
       </Router>
