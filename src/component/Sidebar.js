@@ -121,7 +121,7 @@ const Sidebar = (props) => {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar position="fixed" open={open}>
+      <AppBar position="fixed" open={open} sx={{boxShadow:'2px 2px 20px'}}>
        
         <Toolbar sx={{display:'flex', justifyContent:'space-between'}}>
           <Box sx={{ display: "flex", alignItems: "center" ,}}>
@@ -158,7 +158,7 @@ const Sidebar = (props) => {
         </Toolbar>
         
         <Divider />
-        <Box sx={{m:'10px 30px'}} className=""><BasicBreadcrumbs/></Box>
+        <Box sx={{m:'10px 30px'}} className=""><BasicBreadcrumbs /></Box>
       </AppBar>
       
       <Drawer variant="permanent" open={open} >

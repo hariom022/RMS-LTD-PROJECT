@@ -13,7 +13,7 @@ const BasicBreadcrumbs = () => {
     const location = useLocation();
     const pathnames = location.pathname.split('/').filter((x) => x);
   return (
-    <Breadcrumbs aria-label="breadcrumb">
+    <Breadcrumbs aria-label="breadcrumb" >
       {pathnames.length > 0 ? (
         <BreadcrumbItem to="/" label="Home" />
       ) : (
