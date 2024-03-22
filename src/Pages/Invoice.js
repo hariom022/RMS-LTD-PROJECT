@@ -10,7 +10,7 @@ const Invoice = () => {
   return (
     <Box sx={{ display: "flex" }}>
       <Sidebar />
-      <Box component="main" sx={{ flexGrow: 1, p: 3, mt: "80px" }}>
+      <Box component="main" sx={{ flexGrow: 1, p: 3, mt: "110px" }}>
         <Box>
           <Typography variant="h6"
             sx={{ background: "#fbb2b2", borderRadius: "50px" }}>Invoice</Typography>

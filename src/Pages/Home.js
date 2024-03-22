@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Divider, Typography } from "@mui/material";
 import React from "react";
 import Sidebar from "../component/Sidebar";
 import Paper from "@mui/material/Paper";
@@ -96,10 +96,7 @@ const rows = [
   createData("ZAS123", "Product B", "KG", 200, 10, "Site 1"),
   createData("DFF123", "Product C", "KG", 400, 11, "Site 1"),
   createData("MHG123", "Product D", "KG", 100, 23, "Site 1"),
-  createData("DER123", "Product E", "KG", 400, 44, "Site 1"),
-  createData("YJO123", "Product F", "EA", 200, 25, "Site 1"),
-  createData("YTG123", "Product G", "EA", 555, 60, "Site 1"),
-  createData("CFD123", "Product H", "EA", 432, 60, "Site 1"),
+
 ];
 
 const Home = () => {
@@ -119,7 +116,7 @@ const Home = () => {
     <Box sx={{ display: "flex" }}>
       <Sidebar />
 
-      <Box component="main" sx={{ flexGrow: 1, p: 3, mt: "80px" }}>
+      <Box component="main" sx={{ flexGrow: 1, p: 3, mt: "110px" }}>
         <Box>
           <Grid container spacing={2} className="home-chart">
             <Grid item md={3} sm={6} xs={12}>
@@ -169,7 +166,7 @@ const Home = () => {
                   height: "230px",
                   backgroundColor: "var(--cui-info, #2982cc)",
                   backgroundImage:
-                    "linear-gradient(45deg, var(--cui-info-start, #39f) 0%, var(--cui-info-stop, #2982cc 100%))",
+                    "linear-gradient(45deg, ( #39f) 0%, var(--cui-info-stop, #2982cc 100%))",
                   color: "#fff",
                 }}
               >
@@ -288,6 +285,8 @@ const Home = () => {
         </Box>
         <Box sx={{ marginTop: "80px" }}>
           <Paper sx={{ width: "100%", overflowX: "auto" }}>
+            <Typography sx={{margin:'10px 20px', fontWeight:'bold'}} variant="h5">  Inventory Data</Typography>
+            <Divider/>
             <TableContainer sx={{ maxHeight: 600 }}>
               <Table stickyHeader aria-label="sticky table">
                 <TableHead>

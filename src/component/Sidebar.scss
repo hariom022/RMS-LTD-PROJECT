@@ -10,16 +10,19 @@ $secondary-color:#F7F9F9;
   }
 }
 .drawer-header{
-    background: #273746!important;
+    background: rgba(0, 0, 21, 0.2)!important;
 }
 .css-12i7wg6-MuiPaper-root-MuiDrawer-paper{
-    background: #34495E  !important;
+    background: #3c4b64  !important;
 }
 .list-items {
   color: $primary-color;
   .css-wa5fuu-MuiListItemIcon-root {
     color: $primary-color !important;
   }
+}
+.css-1ddsiuw-MuiListItemIcon-root{
+    color: #fff !important;
 }
 .list-items:hover{
     color: $secondary-color;
@@ -31,7 +34,7 @@ $secondary-color:#F7F9F9;
     display: flex;
     justify-content: space-between;
     margin-block-start: auto;
-    background: #273746 !important;
+    background: rgba(0, 0, 21, 0.2) !important;
 }
 .drawer-bottom{
     .css-i4bv87-MuiSvgIcon-root {

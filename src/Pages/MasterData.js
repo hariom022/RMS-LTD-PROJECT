@@ -120,7 +120,7 @@ const MasterData = () => {
   return (
     <Box sx={{ display: "flex" }}>
       <Sidebar />
-      <Box component="main" sx={{ flexGrow: 1, p: 3, mt: "80px" ,overflowX: 'auto'}}>
+      <Box component="main" sx={{ flexGrow: 1, p: 3, mt: "110px" ,overflowX: 'auto'}}>
         <Paper sx={{ width: "100%", overflowX: 'auto'  }}>
           <TableContainer sx={{ maxHeight: 600 }}>
             <Table stickyHeader aria-label="sticky table">

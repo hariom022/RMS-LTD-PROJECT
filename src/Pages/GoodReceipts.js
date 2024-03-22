@@ -39,7 +39,7 @@ const GoodRecipts = () => {
       <Sidebar />
       <Box
         component="main"
-        sx={{ flexGrow: 1, p: 3, mt: "80px", overflowX: "auto" }}
+        sx={{ flexGrow: 1, p: 3, mt: "110px", overflowX: "auto" }}
       >
         <Typography
           variant="div"

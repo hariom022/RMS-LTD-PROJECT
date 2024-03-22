@@ -83,7 +83,7 @@ const InventoryUpdate = () => {
   return (
     <Box sx={{ display: "flex" }}>
       <Sidebar />
-      <Box component="main" sx={{ flexGrow: 1, p: 3, mt: "80px" }}>
+      <Box component="main" sx={{ flexGrow: 1, p: 3, mt: "110px" }}>
         <Box
           sx={{
             display: "flex",

@@ -32,6 +32,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 
 import { Link } from "react-router-dom";
+import BasicBreadcrumbs from "./BasicBreadcrumbs";
 
 const drawerWidth = 300;
 
@@ -157,9 +158,10 @@ const Sidebar = (props) => {
         </Toolbar>
         
         <Divider />
+        <Box sx={{m:'10px 30px'}} className=""><BasicBreadcrumbs/></Box>
       </AppBar>
       
-      <Drawer variant="permanent" open={open}>
+      <Drawer variant="permanent" open={open} >
         <DrawerHeader className="drawer-header " sx={{display:'flex', justifyContent:'space-around'}}>
           <img
             src="https://www.rmsltd.rw/index.php?eID=dumpFile&t=f&f=10775&token=b1e36e4e74fa57ae0af2aa021c502f36e86dff2e"
@@ -197,7 +199,7 @@ const Sidebar = (props) => {
           </Link>
         </List>
         <Box>
-          <List className="list-items">
+          <List className="list-items" sx={{    paddingRight: "20px"}}>
             <ListItem disablePadding sx={{ display: "block", px: 2.5 }}>
               <ListItemText
                 primary="COMPONENT"
@@ -230,7 +232,7 @@ const Sidebar = (props) => {
                 </ListItemButton>
               </ListItem>
             </Link>
-            <Link to={'/masterData'}>
+            
             <ListItem disablePadding sx={{ display: "block" }} onClick={handleCollapse}>
               <ListItemButton
                 sx={{
@@ -252,7 +254,7 @@ const Sidebar = (props) => {
                   primary="Master Data"
                   sx={{ opacity: open ? 1 : 0 }}
                 />
-                <Typography sx={{opacity: open ? 1 : 0 , width:'0px' ,mr:'30px',}}>
+                <Typography sx={{opacity: open ? 1 : 0 , width:'0px' }}>
                 {isCollapse ?  <ExpandLessIcon/> : <ExpandMoreIcon/>}
                 </Typography>
                 
@@ -260,10 +262,31 @@ const Sidebar = (props) => {
               
             </ListItem>
 
-            </Link>
+           
             <Collapse in={isCollapse} timeout={"auto"} unmountOnExit>
               <ListItem>
-                hii
+              <Link to={'/masterData'}>
+              <ListItemText
+                  primary="Master Data 1"
+                  sx={{ opacity: open ? 1 : 0, marginLeft:'53px' }}
+                /> 
+                </Link>
+              </ListItem>
+              <ListItem>
+                <Link to={'/masterData'}>
+                <ListItemText
+                  primary="Master Data 2"
+                  sx={{ opacity: open ? 1 : 0, marginLeft:'53px' }}
+                />
+                </Link>
+                </ListItem>
+                <ListItem>
+                <Link to={'/masterData'}>
+                <ListItemText
+                  primary="Master Data 3"
+                  sx={{ opacity: open ? 1 : 0, marginLeft:'53px' }}
+                />
+                </Link>
               </ListItem>
             </Collapse>
 
@@ -384,7 +407,10 @@ const Sidebar = (props) => {
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1,padding:'0px' }}>
         <DrawerHeader />
+        
       </Box>
+      
+
     </Box>
   );
 };
