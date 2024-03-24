@@ -153,8 +153,8 @@ const Home = () => {
                       data: [2, 5.5, 2, 8.5, 1.5, 5, 2, 8.5],
                     },
                   ]}
-                  sx={{ width: "80%" }}
-                  height={200}
+                  sx={{ width: "100%", width:'100%' }}
+                 
                 />
               </Item>
             </Grid>
@@ -194,8 +194,8 @@ const Home = () => {
                       data: [2, 3, 2, 5, 1.5, 3, 0, 3],
                     },
                   ]}
-                  sx={{ width: "80%" }}
-                  height={200}
+                  sx={{ width: "100%",height:'100%' }}
+                 
                 />
               </Item>
             </Grid>
@@ -236,8 +236,8 @@ const Home = () => {
                       color: "#fff",
                     },
                   ]}
-                  sx={{ width: "100%", opacity: "0.4" }}
-                  height={200}
+                  sx={{ width: "100%", opacity: "0.4",height:'100%' }}
+              
                 />
               </Item>
             </Grid>
@@ -269,15 +269,14 @@ const Home = () => {
                     <MoreVertIcon sx={{ textAlign: "end", color: "#fff" }} />
                   </IconButton>
                 </Box>
-                <BarChart
+                <BarChart item xs={12}
                   series={[
                     { data: [4, 3, 5] },
                     { data: [1, 6, 3] },
                     { data: [2, 5, 6] },
                     { data: [4, 5, 6] },
                   ]}
-                  width={250}
-                  height={190}
+                  sx={{width:'100%', height:'100%'}}
                 />
               </Item>
             </Grid>

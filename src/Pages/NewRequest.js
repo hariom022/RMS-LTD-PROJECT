@@ -1,8 +1,10 @@
-import { Typography, Box, Button, Divider } from "@mui/material";
+import { Typography, Box, Button, Divider, TableContainer } from "@mui/material";
 import React, { useState } from "react";
 import Sidebar from "../component/Sidebar";
 import { Link } from "react-router-dom";
 import './NewRequest.scss'
+import { Table, TableHead, TableBody, TableRow, TableCell, Paper } from '@mui/material';
+
 
 const NewRequest = () => {
   const [dummyData, setDummyData] = useState([
@@ -39,53 +41,42 @@ const NewRequest = () => {
       <Sidebar />
       <Box component="main" sx={{ flexGrow: 1, p: 3, mt: "110px" }}>
         <Box sx={{display:'flex',justifyContent:'center', m:'0px 0px 40px 0px'}}>
-        <Typography sx={{background: "#139191",borderRadius:'10px', width:'30%' , textAlign:"center",p:'20px',color:'#fff'}} className="qtn-sec">Quotation Approval Section</Typography>
+        <Typography className="qtn-approv-text" variant="h6" sx={{background: "#1a1ac2",borderRadius:'10px', textAlign:"center",color:'#fff'}} >Quotation Approval Section</Typography>
         </Box>
         
         <Box>
+        <Paper>
+          <TableContainer>
+        <Table>
+        <TableHead>
+          <TableRow>
+            <TableCell sx={{ fontWeight: "bold", textAlign: "center" }}>ID</TableCell>
+            <TableCell sx={{ fontWeight: "bold", textAlign: "center" }}>Quotation</TableCell>
+            <TableCell sx={{ fontWeight: "bold", textAlign: "center" }}>Amount</TableCell>
+            <TableCell sx={{ fontWeight: "bold", textAlign: "center" }}>Approve or Reject</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
           {dummyData.map((item) => (
-            <>
-              <Box
-                key={item.id}
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-around",
-                  textAlign: "center",
-                  mt: 5,
-                }}
-                className="newRequest-container"
-              >
-                <Typography sx={{ textAlign: "center" }} className="request">
-                  Request No <br /> # {item.id}
-                </Typography>
-                <Box sx={{ display: "flex", justifyContent: "center" }}>
-                  <Typography
-                    sx={{ textAlign: "center" }}
-                    className="quotation"
-                  >
-                    Quotation No. :<br /> {item.Quotation}
-                  </Typography>
-                </Box>
-                <Typography sx={{ textAlign: "center" }} className="amount">
-                  Total Amount :{item.amount}
-                </Typography>
-                <Box sx={{ display: "flex", justifyContent: "center" }}>
-                  <Link to={"/quotation"}>
-                    <Button className="approve-btn">Approve</Button>
+            <TableRow key={item.id} className="newRequest-container">
+              <TableCell align="center">{item.id}</TableCell>
+              <TableCell align="center">{item.Quotation}</TableCell>
+              <TableCell align="center">{item.amount}</TableCell>
+              <TableCell align="center">
+                <Box>
+                  <Link to={'/quotationDetails'}>
+                  <Button className="approve-btn">Approve </Button>
                   </Link>
-                  <Button
-                    className="reject-btn"
-                    onClick={() => rejectDataHandler(item.id)}
-                  >
-                    Reject
-                  </Button>
+                  <Button className="reject-btn" onClick={()=>rejectDataHandler(item.id)}>Reject</Button>
                 </Box>
-              </Box>
-              <br />
-              <Divider sx={{ color: "black", width: "100%" }} />
-            </>
+              </TableCell>
+            </TableRow>
           ))}
+        </TableBody>
+      </Table>
+      
+      </TableContainer>
+      </Paper>
         </Box>
       </Box>
     </Box>

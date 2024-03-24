@@ -9,6 +9,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
+import './MasterData.scss'
 
 const columns = [
   { id: "MaterialNumber", label: "Material Number", minWidth: 100 ,align: "center"},
@@ -121,7 +122,19 @@ const MasterData = () => {
     <Box sx={{ display: "flex" }}>
       <Sidebar />
       <Box component="main" sx={{ flexGrow: 1, p: 3, mt: "110px" ,overflowX: 'auto'}}>
-        <Paper sx={{ width: "100%", overflowX: 'auto'  }}>
+      <Typography
+          variant="div"
+          sx={{ display: "flex", justifyContent: "center" }}
+        >
+          <Typography
+          className="master-data"
+            variant="h6"
+            sx={{ background: "#1a1ac2", color: "#fff", borderRadius: "10px" }}
+          >
+            Master Data
+          </Typography>
+        </Typography>
+        <Paper sx={{ width: "100%", overflowX: 'auto' , mt:'50px' }}>
           <TableContainer sx={{ maxHeight: 600 }}>
             <Table stickyHeader aria-label="sticky table">
               <TableHead >

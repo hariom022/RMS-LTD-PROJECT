@@ -1,4 +1,4 @@
-.quotation-container{
+
     .approve-btn {
         background: #2982cc;
         color: #fff;
@@ -8,15 +8,15 @@
             background: #2d622d;
         color: #fff;
           }
-      }
-      .reject-btn {
-          background-color: #d93737;
-          color: #fff;
-          &:hover {
-            color: #fff;
-            background-color: black;
-          }
         }
+
+
+.reject-btn{
+    background-color: #d93737;
+    color: #fff;
+    &:hover {
+      color: #fff;
+      background-color: black;
+    }
+
 }
-    
-    

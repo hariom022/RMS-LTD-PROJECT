@@ -84,6 +84,18 @@ const InventoryUpdate = () => {
     <Box sx={{ display: "flex" }}>
       <Sidebar />
       <Box component="main" sx={{ flexGrow: 1, p: 3, mt: "110px" }}>
+      <Typography
+          variant="div"
+          sx={{ display: "flex", justifyContent: "center" }}
+        >
+          <Typography
+          className="good-receipt"
+            variant="h6"
+            sx={{ background: "#1a1ac2", color: "#fff", borderRadius: "10px", mb:'20px' }}
+          >
+            Inventory Update
+          </Typography>
+        </Typography>
         <Box
           sx={{
             display: "flex",
@@ -101,9 +113,9 @@ const InventoryUpdate = () => {
             <Button variant="contained">Upload File</Button>
           </Typography>
         </Box>
-        <Paper sx={{ width: "100%", overflowX: "auto" }}>
-          <TableContainer sx={{ maxHeight: 600 }}>
-            <Table stickyHeader aria-label="sticky table">
+        <Paper sx={{ width: "100%",  }}>
+          <TableContainer sx={{ maxHeight: 600, overflowX: "auto" }}>
+            <Table stickyHeader aria-label="sticky table" sx={{overflowX: "auto"}}>
               <TableHead>
                 <TableRow>
                   {columns.map((column) => (

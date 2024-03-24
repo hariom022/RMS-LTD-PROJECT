@@ -33,7 +33,7 @@ const Authentication = () => {
         style={{ marginBottom: '20px' }}
       />
       <Link to={'/signup'}>
-      <Button variant="contained" sx={{height:"60px"}}>+Add New User</Button>
+      <Button variant="contained" sx={{height:"60px", background:'#2982cc'}}>+Add New User</Button>
       </Link>
         </Box>
       
@@ -55,7 +55,7 @@ const Authentication = () => {
               <TableCell>{row.role}</TableCell>
               <TableCell>{row.description}</TableCell>
               <TableCell>{row.createdTime}</TableCell>
-              <TableCell><Link style={{cursor:'pointer'}}><EditIcon sx={{color:'blue',background:'#978686'}}/></Link>  <Link style={{cursor:'pointer'}}><DeleteIcon sx={{color:'#e63434',background:'#978686'}} onClick={()=>deleteUserHandler(row.id)}/></Link></TableCell>
+              <TableCell><Link style={{cursor:'pointer'}}><EditIcon sx={{color:'#2982cc'}}/></Link>  <Link style={{cursor:'pointer'}}><DeleteIcon sx={{color:'#e63434'}} onClick={()=>deleteUserHandler(row.id)}/></Link></TableCell>
               
 
             </TableRow>

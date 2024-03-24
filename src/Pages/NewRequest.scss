@@ -1,68 +1,35 @@
+.qtn-approv-text {
+  width: 40%;
+}
 .newRequest-container {
-    .approve-btn {
+  .approve-btn {
+    background: #2982cc;
+    color: #fff;
+    margin-left: 5px;
+    margin-right: 10px;
+    &:hover {
       background: #2d622d;
       color: #fff;
-      margin-left: 5px;
-      margin-right: 10px;
-      &:hover {
-          background: #2d622d;
-      color: #fff;
-        }
     }
-    .reject-btn {
-        background-color: #d93737;
-        color: #fff;
-        &:hover {
-          color: #fff;
-          background-color: black;
-        }
-      }
-    }
-    .request{
-      background:#fbb2b2;
-      padding: 5px;
-      border-radius: 10px;
-      border: 1px solid black;
-    }
-    .quotation{
-      background-color: #5a93ab;
-      margin: 5px;
-      padding: 5px;
-      border-radius: 10px;
-      color: #fff;
-    }
-    .amount{
-      background: dimgrey;
-      padding: 5px;
-      border-radius: 10px;
-      color: #fff;
-  
-    }
-
-    @media only screen and (max-width: 784px){
-      .qtn-sec{
-        width: 100% !important;
-      }
-      .newRequest-container{
-          display: block !important;
-          justify-content: center !important;
-          text-align: center !important;
-  
-          .approve-btn{
-              margin: 20px 0px;
-          }
-          .reject-btn {
-              margin: 20px 0px;
-          }
-          .request{
-            margin-top: 20px;
-          }
-          .quotation{
-            margin-top: 20px;
-          }
-          .amount{
-            margin-top: 20px;
-          }
-      }
-  
   }
+  .reject-btn {
+    background-color: #d93737;
+    color: #fff;
+    &:hover {
+      color: #fff;
+      background-color: black;
+    }
+  }
+}
+
+@media only screen and (max-width: 784px) {
+  .qtn-approv-text {
+    width: 80%;
+  }
+
+  .newRequest-container {
+    .reject-btn {
+      margin: 10px 0px;
+    }
+  }
+}

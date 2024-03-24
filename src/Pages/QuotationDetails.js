@@ -9,7 +9,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import './QuotationDetails.scss'
 
 const columns = [
@@ -85,12 +85,16 @@ const QuotationDetails = () => {
     setRowsPerPage(+event.target.value);
     setPage(0);
   };
+
+
+
+  const nevigate = useNavigate();
   return (
     <Box sx={{ display: "flex" }}>
       <Sidebar />
       <Box component="main" sx={{ flexGrow: 1, p: 3, mt: "110px" }}>
         <Box sx={{display:'flex',justifyContent:'center', m:'0px 0px 40px 0px'}}>
-        <Typography sx={{background: "#139191",borderRadius:'10px', width:'20%' , textAlign:"center",p:'20px',color:'#fff'}}>Quotation Details</Typography>
+        <Typography variant="h6" sx={{background: "#1a1ac2",borderRadius:'10px', width:'20%' , textAlign:"center",color:'#fff', width:'40%'}}>Quotation Details</Typography>
 
         </Box>
         <Box>
@@ -157,7 +161,7 @@ const QuotationDetails = () => {
                   </Link>
                   <Button
                     className="reject-btn"
-                  
+                  onClick={()=>nevigate(-1)}
                   >
                     Reject
                   </Button>
