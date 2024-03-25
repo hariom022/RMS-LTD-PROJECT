@@ -105,7 +105,7 @@ const DetailedGoodReceipt = () => {
             );
           })}
         </Box>
-        <Box>
+        <Box className="detailed">
           <Paper>
             <TableContainer
               component={Paper}

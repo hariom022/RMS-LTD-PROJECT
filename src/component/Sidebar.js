@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Sidebar.scss";
 import { styled, useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
@@ -24,17 +24,18 @@ import InventoryIcon from "@mui/icons-material/Inventory";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import BugReportIcon from "@mui/icons-material/BugReport";
 import PersonAddAlt1Icon from "@mui/icons-material/PersonAddAlt1";
-import Avatar from '@mui/material/Avatar';
-import Stack from '@mui/material/Stack';
-import DraftsIcon from '@mui/icons-material/Drafts';
+import Avatar from "@mui/material/Avatar";
+import Stack from "@mui/material/Stack";
+import DraftsIcon from "@mui/icons-material/Drafts";
 import { Collapse } from "@mui/material";
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import ExpandLessIcon from '@mui/icons-material/ExpandLess';
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 
 import { Link } from "react-router-dom";
 import BasicBreadcrumbs from "./BasicBreadcrumbs";
 
 const drawerWidth = 300;
+const mobileThreshold = 800; // Adjust as needed
 
 const openedMixin = (theme) => ({
   width: drawerWidth,
@@ -100,11 +101,13 @@ const Drawer = styled(MuiDrawer, {
   }),
 }));
 
-
 const Sidebar = (props) => {
   const theme = useTheme();
   const [open, setOpen] = React.useState(true);
-  const[isCollapse,setIsCollapse]=useState(false)
+  const [isCollapse, setIsCollapse] = useState(false);
+  const [isMobile, setIsMobile] = useState(
+    window.innerWidth <= mobileThreshold
+  );
 
   const handleDrawer = () => {
     if (open == false) {
@@ -114,17 +117,31 @@ const Sidebar = (props) => {
     }
   };
 
-  const handleCollapse=()=>{
-    setIsCollapse(!isCollapse)
-  }
+  const handleCollapse = () => {
+    setIsCollapse(!isCollapse);
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= mobileThreshold);
+      if (window.innerWidth <= mobileThreshold && open) {
+        setOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [open]);
 
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar position="fixed" open={open} sx={{boxShadow:'2px 2px 20px'}}>
-       
-        <Toolbar sx={{display:'flex', justifyContent:'space-between'}}>
-          <Box sx={{ display: "flex", alignItems: "center" ,}}>
+      <AppBar position="fixed" open={open} sx={{ boxShadow: "2px 2px 20px" }}>
+        <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+          <Box sx={{ display: "flex", alignItems: "center" }}>
             <IconButton
               color="inherit"
               aria-label="open drawer"
@@ -135,39 +152,50 @@ const Sidebar = (props) => {
                 ...(open && { display: "block" }),
               }}
             >
-              <MenuIcon sx={{color:' #706d6d'}}/>
+              <MenuIcon sx={{ color: " #706d6d" }} />
             </IconButton>
-            <Link to={'/'} sx={{color:'black'}} className="dashboard-header">
-            <Typography sx={{pr:'10px' }}>Dashboard</Typography>
+            <Link to={"/"} sx={{ color: "black" }} className="dashboard-header">
+              <Typography sx={{ pr: "10px" }}>Dashboard</Typography>
             </Link>
-            
-              <Typography sx={{pr:'10px',color:' #706d6d'}}>Users</Typography>
-              <Typography sx={{color:' #706d6d'}}>Settings</Typography>
-            
+
+            <Typography sx={{ pr: "10px", color: " #706d6d" }}>
+              Users
+            </Typography>
+            <Typography sx={{ color: " #706d6d" }}>Settings</Typography>
           </Box>
-          <Box sx={{display:'flex', alignItems:'center' , justifyContent:'end'}}>
-              <NotificationsIcon sx={{mr:'10px',color:' #706d6d'}}/>
-              <DraftsIcon sx={{mr:'20px',color:' #706d6d'}}/>
-              <Stack direction="row" spacing={2}>
-                <Link to={'/login'}>
-              <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "end",
+            }}
+          >
+            <NotificationsIcon sx={{ mr: "10px", color: " #706d6d" }} />
+            <DraftsIcon sx={{ mr: "20px", color: " #706d6d" }} />
+            <Stack direction="row" spacing={2}>
+              <Link to={"/login"}>
+                <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
               </Link>
-              </Stack>
-              
-         </Box>
+            </Stack>
+          </Box>
         </Toolbar>
-        
+
         <Divider />
-        <Box sx={{m:'10px 30px'}} className=""><BasicBreadcrumbs /></Box>
+        <Box sx={{ m: "10px 30px" }} className="">
+          <BasicBreadcrumbs />
+        </Box>
       </AppBar>
-      
-      <Drawer variant="permanent" open={open} >
-        <DrawerHeader className="drawer-header " sx={{display:'flex', justifyContent:'space-around'}}>
+
+      <Drawer variant="permanent" open={open}>
+        <DrawerHeader
+          className="drawer-header "
+          sx={{ display: "flex", justifyContent: "space-around" }}
+        >
           <img
             src="https://www.rmsltd.rw/index.php?eID=dumpFile&t=f&f=10775&token=b1e36e4e74fa57ae0af2aa021c502f36e86dff2e"
             height="30px"
           />
-          <Typography sx={{color:'#fff'}}>RMS</Typography>
+          <Typography sx={{ color: "#fff" }}>RMS</Typography>
         </DrawerHeader>
         <Divider />
         <List className="list-items">
@@ -199,7 +227,7 @@ const Sidebar = (props) => {
           </Link>
         </List>
         <Box>
-          <List className="list-items" sx={{    paddingRight: "20px"}}>
+          <List className="list-items" sx={{ paddingRight: "20px" }}>
             <ListItem disablePadding sx={{ display: "block", px: 2.5 }}>
               <ListItemText
                 primary="COMPONENT"
@@ -232,8 +260,12 @@ const Sidebar = (props) => {
                 </ListItemButton>
               </ListItem>
             </Link>
-            
-            <ListItem disablePadding sx={{ display: "block" }} onClick={handleCollapse}>
+
+            <ListItem
+              disablePadding
+              sx={{ display: "block" }}
+              onClick={handleCollapse}
+            >
               <ListItemButton
                 sx={{
                   minHeight: 48,
@@ -254,144 +286,141 @@ const Sidebar = (props) => {
                   primary="Master Data"
                   sx={{ opacity: open ? 1 : 0 }}
                 />
-                <Typography sx={{opacity: open ? 1 : 0 , width:'0px' }}>
-                {isCollapse ?  <ExpandLessIcon/> : <ExpandMoreIcon/>}
+                <Typography sx={{ opacity: open ? 1 : 0, width: "0px" }}>
+                  {isCollapse ? <ExpandLessIcon /> : <ExpandMoreIcon />}
                 </Typography>
-                
               </ListItemButton>
-              
             </ListItem>
 
-           
             <Collapse in={isCollapse} timeout={"auto"} unmountOnExit>
               <ListItem>
-              <Link to={'/masterData'}>
-              <ListItemText
-                  primary="Master Data 1"
-                  sx={{ opacity: open ? 1 : 0, marginLeft:'53px' }}
-                /> 
+                <Link to={"/masterData"}>
+                  <ListItemText
+                    primary="Master Data 1"
+                    sx={{ opacity: open ? 1 : 0, marginLeft: "53px" }}
+                  />
                 </Link>
               </ListItem>
               <ListItem>
-                <Link to={'/masterData'}>
-                <ListItemText
-                  primary="Master Data 2"
-                  sx={{ opacity: open ? 1 : 0, marginLeft:'53px' }}
-                />
+                <Link to={"/masterData"}>
+                  <ListItemText
+                    primary="Master Data 2"
+                    sx={{ opacity: open ? 1 : 0, marginLeft: "53px" }}
+                  />
                 </Link>
-                </ListItem>
-                <ListItem>
-                <Link to={'/masterData'}>
-                <ListItemText
-                  primary="Master Data 3"
-                  sx={{ opacity: open ? 1 : 0, marginLeft:'53px' }}
-                />
+              </ListItem>
+              <ListItem>
+                <Link to={"/masterData"}>
+                  <ListItemText
+                    primary="Master Data 3"
+                    sx={{ opacity: open ? 1 : 0, marginLeft: "53px" }}
+                  />
                 </Link>
               </ListItem>
             </Collapse>
 
-            <Link to={'/inventory'}>
-            <ListItem disablePadding sx={{ display: "block" }}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? "initial" : "center",
-                  px: 2.5,
-                }}
-              >
-                <ListItemIcon
+            <Link to={"/inventory"}>
+              <ListItem disablePadding sx={{ display: "block" }}>
+                <ListItemButton
                   sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : "auto",
-                    justifyContent: "center",
+                    minHeight: 48,
+                    justifyContent: open ? "initial" : "center",
+                    px: 2.5,
                   }}
                 >
-                  <InventoryIcon />
-                </ListItemIcon>
-                <ListItemText
-                  primary="Inventory Update"
-                  sx={{ opacity: open ? 1 : 0 }}
-                />
-              </ListItemButton>
-            </ListItem>
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: open ? 3 : "auto",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <InventoryIcon />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Inventory Update"
+                    sx={{ opacity: open ? 1 : 0 }}
+                  />
+                </ListItemButton>
+              </ListItem>
             </Link>
 
-            <Link to={'/newRequest'}>
-            <ListItem disablePadding sx={{ display: "block" }}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? "initial" : "center",
-                  px: 2.5,
-                }}
-              >
-                <ListItemIcon
+            <Link to={"/newRequest"}>
+              <ListItem disablePadding sx={{ display: "block" }}>
+                <ListItemButton
                   sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : "auto",
-                    justifyContent: "center",
+                    minHeight: 48,
+                    justifyContent: open ? "initial" : "center",
+                    px: 2.5,
                   }}
                 >
-                  <NotificationsIcon />
-                </ListItemIcon>
-                <ListItemText
-                  primary="New Request"
-                  sx={{ opacity: open ? 1 : 0 }}
-                />
-              </ListItemButton>
-            </ListItem>
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: open ? 3 : "auto",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <NotificationsIcon />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="New Request"
+                    sx={{ opacity: open ? 1 : 0 }}
+                  />
+                </ListItemButton>
+              </ListItem>
             </Link>
 
-            <Link to={'/reports'}>
-            <ListItem disablePadding sx={{ display: "block" }}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? "initial" : "center",
-                  px: 2.5,
-                }}
-              >
-                <ListItemIcon
+            <Link to={"/reports"}>
+              <ListItem disablePadding sx={{ display: "block" }}>
+                <ListItemButton
                   sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : "auto",
-                    justifyContent: "center",
+                    minHeight: 48,
+                    justifyContent: open ? "initial" : "center",
+                    px: 2.5,
                   }}
                 >
-                  <BugReportIcon />
-                </ListItemIcon>
-                <ListItemText
-                  primary="Reports"
-                  sx={{ opacity: open ? 1 : 0 }}
-                />
-              </ListItemButton>
-            </ListItem>
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: open ? 3 : "auto",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <BugReportIcon />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Reports"
+                    sx={{ opacity: open ? 1 : 0 }}
+                  />
+                </ListItemButton>
+              </ListItem>
             </Link>
 
-            <Link to={'/auth'}>
-            <ListItem disablePadding sx={{ display: "block" }}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? "initial" : "center",
-                  px: 2.5,
-                }}
-              >
-                <ListItemIcon
+            <Link to={"/auth"}>
+              <ListItem disablePadding sx={{ display: "block" }}>
+                <ListItemButton
                   sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : "auto",
-                    justifyContent: "center",
+                    minHeight: 48,
+                    justifyContent: open ? "initial" : "center",
+                    px: 2.5,
                   }}
                 >
-                  <PersonAddAlt1Icon />
-                </ListItemIcon>
-                <ListItemText
-                  primary="Role & Authentication"
-                  sx={{ opacity: open ? 1 : 0 }}
-                />
-              </ListItemButton>
-            </ListItem>
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: open ? 3 : "auto",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <PersonAddAlt1Icon />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Role & Authentication"
+                    sx={{ opacity: open ? 1 : 0 }}
+                  />
+                </ListItemButton>
+              </ListItem>
             </Link>
           </List>
         </Box>
@@ -405,12 +434,9 @@ const Sidebar = (props) => {
           </IconButton>
         </DrawerHeader>
       </Drawer>
-      <Box component="main" sx={{ flexGrow: 1,padding:'0px' }}>
+      <Box component="main" sx={{ flexGrow: 1, padding: "0px" }}>
         <DrawerHeader />
-        
       </Box>
-      
-
     </Box>
   );
 };
