@@ -11,9 +11,17 @@ import {
 } from "@mui/material";
 import Button from "@mui/material/Button";
 import "./Management.scss";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { makeStyles } from "@mui/styles";
 
-const Management = () => {
+const useStyles = makeStyles({
+  tableContainer: {
+    maxWidth: "100%",
+    overflowX: "auto",
+  },
+});
+const Management = ({ data }) => {
+  const classes = useStyles();
   const [dummyData, setDummyData] = useState([
     {
       id: 102,
@@ -50,29 +58,38 @@ const Management = () => {
     setDummyData(res);
   };
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: { sm: "block", md: "block", lg: "flex" } }}>
       <Sidebar />
       <Box component="main" sx={{ flexGrow: 1, p: 3, mt: "110px" }}>
-        <Typography
-          variant="div"
-          sx={{ display: "flex", justifyContent: "center" }}
-        >
+        <Box sx={{ marginLeft: "60px" }}>
           <Typography
-          className="management-text"
-            variant="h6"
-            sx={{ background: "#1a1ac2", color: "#fff", borderRadius: "10px" }}
+            variant="div"
+            sx={{ display: "flex", justifyContent: "center" }}
           >
-            Delivery / Good Receipt
-          </Typography>
-        </Typography>
-       
-          <Paper >
-          <TableContainer component={Paper} style={{ maxHeight: 400, marginTop:'50px' }}>
-            <Table
-              stickyHeader
-              aria-label=" "
-              sx={{ mt: "20px", overflowX: "auto" }}
+            <Typography
+              className="management-text"
+              variant="h6"
+              sx={{
+                background: "#1a1ac2",
+                color: "#fff",
+                borderRadius: "10px",
+              }}
             >
+              Delivery / Good Receipt
+            </Typography>
+          </Typography>
+
+          <TableContainer
+            component={Paper}
+            className={classes.tableContainer}
+            style={{
+              maxWidth: "100%",
+              maxHeight: 400,
+              marginTop: "50px",
+              overflowX: "auto",
+            }}
+          >
+            <Table stickyHeader aria-label=" " sx={{ mt: "20px" }}>
               <TableHead>
                 <TableRow>
                   <TableCell sx={{ fontWeight: "bold", textAlign: "center" }}>
@@ -107,9 +124,9 @@ const Management = () => {
                     <TableCell align="center">{item.amount}</TableCell>
                     <TableCell align="center">
                       <Box>
-                        <Link to={"/goodRecipts"}>
+                        <NavLink to={"/goodRecipts"}>
                           <Button className="approve-btn">Approve</Button>
-                        </Link>
+                        </NavLink>
                         <Button
                           className="reject-btn"
                           onClick={() => rejectDataHandler(item.id)}
@@ -122,9 +139,8 @@ const Management = () => {
                 ))}
               </TableBody>
             </Table>
-            </TableContainer>
-          </Paper>
-        
+          </TableContainer>
+        </Box>
       </Box>
     </Box>
   );

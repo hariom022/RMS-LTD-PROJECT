@@ -119,9 +119,10 @@ const MasterData = () => {
     setPage(0);
   };
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: { sm: "block", md: "block", lg: "flex" } }}>
       <Sidebar />
       <Box component="main" sx={{ flexGrow: 1, p: 3, mt: "110px" ,overflowX: 'auto'}}>
+        <Box sx={{marginLeft:'60px'}}>
       <Typography
           variant="div"
           sx={{ display: "flex", justifyContent: "center" }}
@@ -189,6 +190,7 @@ const MasterData = () => {
             onRowsPerPageChange={handleChangeRowsPerPage}
           />
         </Paper>
+        </Box>
       </Box>
     </Box>
   );

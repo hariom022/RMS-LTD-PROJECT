@@ -9,7 +9,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import './QuotationDetails.scss'
 
 const columns = [
@@ -90,9 +90,10 @@ const QuotationDetails = () => {
 
   const nevigate = useNavigate();
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: { sm: "block", md: "block", lg: "flex" } }}>
       <Sidebar />
       <Box component="main" sx={{ flexGrow: 1, p: 3, mt: "110px" }}>
+        <Box sx={{ml:'60px'}}>
         <Box sx={{display:'flex',justifyContent:'center', m:'0px 0px 40px 0px'}}>
         <Typography variant="h6" sx={{background: "#1a1ac2",borderRadius:'10px', width:'20%' , textAlign:"center",color:'#fff', width:'40%'}}>Quotation Details</Typography>
 
@@ -156,9 +157,9 @@ const QuotationDetails = () => {
           </Box>
           <Typography sx={{border:'2px solid black', textAlign:'end', p:'10px'}}>Total Quotation  Amount = $1500.00</Typography>
           <Box sx={{ display: "flex", justifyContent: "center" ,mt:'50px' }} className="quotation-container">
-                  <Link to={"/detailedGoodReceipt"}>
+                  <NavLink to={"/detailedGoodReceipt"}>
                     <Button className="approve-btn">Approve</Button>
-                  </Link>
+                  </NavLink>
                   <Button
                     className="reject-btn"
                   onClick={()=>nevigate(-1)}
@@ -166,6 +167,7 @@ const QuotationDetails = () => {
                     Reject
                   </Button>
                 </Box>
+        </Box>
         </Box>
       </Box>
     </Box>

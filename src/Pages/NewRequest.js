@@ -1,7 +1,7 @@
 import { Typography, Box, Button, Divider, TableContainer } from "@mui/material";
 import React, { useState } from "react";
 import Sidebar from "../component/Sidebar";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import './NewRequest.scss'
 import { Table, TableHead, TableBody, TableRow, TableCell, Paper } from '@mui/material';
 
@@ -37,9 +37,10 @@ const NewRequest = () => {
     setDummyData(res);
   };
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: {sm:"block", md:'block', lg:'flex'} }}>
       <Sidebar />
       <Box component="main" sx={{ flexGrow: 1, p: 3, mt: "110px" }}>
+        <Box sx={{ml:"60px"}}>
         <Box sx={{display:'flex',justifyContent:'center', m:'0px 0px 40px 0px'}}>
         <Typography className="qtn-approv-text" variant="h6" sx={{background: "#1a1ac2",borderRadius:'10px', textAlign:"center",color:'#fff'}} >Quotation Approval Section</Typography>
         </Box>
@@ -64,9 +65,9 @@ const NewRequest = () => {
               <TableCell align="center">{item.amount}</TableCell>
               <TableCell align="center">
                 <Box>
-                  <Link to={'/quotationDetails'}>
+                  <NavLink to={'/quotationDetails'}>
                   <Button className="approve-btn">Approve </Button>
-                  </Link>
+                  </NavLink>
                   <Button className="reject-btn" onClick={()=>rejectDataHandler(item.id)}>Reject</Button>
                 </Box>
               </TableCell>
@@ -77,6 +78,7 @@ const NewRequest = () => {
       
       </TableContainer>
       </Paper>
+        </Box>
         </Box>
       </Box>
     </Box>

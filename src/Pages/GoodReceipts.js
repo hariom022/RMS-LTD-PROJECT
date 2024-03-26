@@ -7,7 +7,7 @@ import {
 } from "@mui/material";
 import React, { useState } from "react";
 import Sidebar from "../component/Sidebar";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import {
   Table,
   TableHead,
@@ -45,67 +45,81 @@ const GoodRecipts = () => {
 
   const nevigate = useNavigate();
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: { sm: "block", md: "block", lg: "flex" } }}>
       <Sidebar />
       <Box
         component="main"
         sx={{ flexGrow: 1, p: 3, mt: "110px", overflowX: "auto" }}
       >
-        <Typography
-          variant="div"
-          sx={{ display: "flex", justifyContent: "center" }}
-        >
+        <Box sx={{ ml: "60px" }}>
           <Typography
-          className="good-receipt"
-            variant="h6"
-            sx={{ background: "#1a1ac2", color: "#fff", borderRadius: "10px" }}
+            variant="div"
+            sx={{ display: "flex", justifyContent: "center" }}
           >
-            Good Receipt
+            <Typography
+              className="good-receipt"
+              variant="h6"
+              sx={{
+                background: "#1a1ac2",
+                color: "#fff",
+                borderRadius: "10px",
+              }}
+            >
+              Good Receipt
+            </Typography>
           </Typography>
-        </Typography>
-        <Paper>
-          <TableContainer component={Paper} style={{ maxHeight: 400, marginTop:'50px' }}>
-            <Table sx={{ mt: "20px", overflowX: "auto" }}>
-              <TableHead>
-                <TableRow sx={{ textAlign: "center" }}>
-                  <TableCell sx={{ fontWeight: "bold", textAlign: "center" }}>
-                    ID
-                  </TableCell>
-                  <TableCell sx={{ fontWeight: "bold", textAlign: "center" }}>
-                    GoodReceipt
-                  </TableCell>
-                  <TableCell sx={{ fontWeight: "bold", textAlign: "center" }}>
-                    Invoice
-                  </TableCell>
-                  <TableCell sx={{ fontWeight: "bold", textAlign: "center" }}>
-                    Accept or Reject
-                  </TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {dummyData.map((item) => (
-                  <TableRow key={item.id} className="good-receipt-container">
-                    <TableCell align="center">{item.id}</TableCell>
-                    <TableCell align="center">{item.GoodReceipt}</TableCell>
-                    <TableCell align="center">{item.Invoice}</TableCell>
-                    <TableCell align="center">
-                      <Box>
-                        <Link to={'/invoice'}>
-                        <Button className="approve-btn">Accept</Button>
-                        </Link>
-                        <Button className="reject-btn" onClick={()=>rejectDataHandler(item.id)}>Reject</Button>
-                      </Box>
+          <Paper>
+            <TableContainer
+              component={Paper}
+              style={{ maxHeight: 400, marginTop: "50px" }}
+            >
+              <Table sx={{ mt: "20px", overflowX: "auto" }}>
+                <TableHead>
+                  <TableRow sx={{ textAlign: "center" }}>
+                    <TableCell sx={{ fontWeight: "bold", textAlign: "center" }}>
+                      ID
+                    </TableCell>
+                    <TableCell sx={{ fontWeight: "bold", textAlign: "center" }}>
+                      GoodReceipt
+                    </TableCell>
+                    <TableCell sx={{ fontWeight: "bold", textAlign: "center" }}>
+                      Invoice
+                    </TableCell>
+                    <TableCell sx={{ fontWeight: "bold", textAlign: "center" }}>
+                      Accept or Reject
                     </TableCell>
                   </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </TableContainer>
-        </Paper>
-        <Box sx={{ textAlign: "center", mt: "20px" }}>
-          <Button variant="contained" onClick={() => nevigate(-1)}>
-            Back
-          </Button>
+                </TableHead>
+                <TableBody>
+                  {dummyData.map((item) => (
+                    <TableRow key={item.id} className="good-receipt-container">
+                      <TableCell align="center">{item.id}</TableCell>
+                      <TableCell align="center">{item.GoodReceipt}</TableCell>
+                      <TableCell align="center">{item.Invoice}</TableCell>
+                      <TableCell align="center">
+                        <Box>
+                          <NavLink to={"/invoice"}>
+                            <Button className="approve-btn">Accept</Button>
+                          </NavLink>
+                          <Button
+                            className="reject-btn"
+                            onClick={() => rejectDataHandler(item.id)}
+                          >
+                            Reject
+                          </Button>
+                        </Box>
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
+          </Paper>
+          <Box sx={{ textAlign: "center", mt: "20px" }}>
+            <Button variant="contained" onClick={() => nevigate(-1)}>
+              Back
+            </Button>
+          </Box>
         </Box>
       </Box>
     </Box>

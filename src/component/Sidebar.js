@@ -31,11 +31,11 @@ import { Collapse } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import BasicBreadcrumbs from "./BasicBreadcrumbs";
 
-const drawerWidth = 300;
-const mobileThreshold = 800; // Adjust as needed
+const drawerWidth = 270;
+const mobileThreshold = 900; // Adjust as needed
 
 const openedMixin = (theme) => ({
   width: drawerWidth,
@@ -127,6 +127,7 @@ const Sidebar = (props) => {
       if (window.innerWidth <= mobileThreshold && open) {
         setOpen(false);
       }
+      
     };
 
     window.addEventListener("resize", handleResize);
@@ -139,7 +140,7 @@ const Sidebar = (props) => {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar position="fixed" open={open} sx={{ boxShadow: "2px 2px 20px" }}>
+      <AppBar position="fixed" open={open} sx={{ boxShadow: "2px 2px 20px" }} >
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
           <Box sx={{ display: "flex", alignItems: "center" }}>
             <IconButton
@@ -199,7 +200,7 @@ const Sidebar = (props) => {
         </DrawerHeader>
         <Divider />
         <List className="list-items">
-          <Link to={"/"}>
+          <NavLink to={"/"}>
             <ListItem disablePadding sx={{ display: "block" }}>
               <ListItemButton
                 sx={{
@@ -218,13 +219,10 @@ const Sidebar = (props) => {
                   <DashboardIcon />
                 </ListItemIcon>
 
-                <ListItemText
-                  primary="Dashboard"
-                  sx={{ opacity: open ? 1 : 0 }}
-                />
+                <ListItemText sx={{ opacity: open ? 1 : 0 }}>Dashboard</ListItemText>
               </ListItemButton>
             </ListItem>
-          </Link>
+          </NavLink>
         </List>
         <Box>
           <List className="list-items" sx={{ paddingRight: "20px" }}>
@@ -235,7 +233,7 @@ const Sidebar = (props) => {
               />
             </ListItem>
 
-            <Link to={"/management"}>
+            <NavLink to={"/management"}>
               <ListItem disablePadding sx={{ display: "block" }}>
                 <ListItemButton
                   sx={{
@@ -259,7 +257,7 @@ const Sidebar = (props) => {
                   />
                 </ListItemButton>
               </ListItem>
-            </Link>
+            </NavLink>
 
             <ListItem
               disablePadding
@@ -294,32 +292,32 @@ const Sidebar = (props) => {
 
             <Collapse in={isCollapse} timeout={"auto"} unmountOnExit>
               <ListItem>
-                <Link to={"/masterData"}>
+                <NavLink to={"/masterData"}>
                   <ListItemText
                     primary="Master Data 1"
                     sx={{ opacity: open ? 1 : 0, marginLeft: "53px" }}
                   />
-                </Link>
+                </NavLink>
               </ListItem>
               <ListItem>
-                <Link to={"/masterData"}>
+                <NavLink to={"/masterData"}>
                   <ListItemText
                     primary="Master Data 2"
                     sx={{ opacity: open ? 1 : 0, marginLeft: "53px" }}
                   />
-                </Link>
+                </NavLink>
               </ListItem>
               <ListItem>
-                <Link to={"/masterData"}>
+                <NavLink to={"/masterData"}>
                   <ListItemText
                     primary="Master Data 3"
                     sx={{ opacity: open ? 1 : 0, marginLeft: "53px" }}
                   />
-                </Link>
+                </NavLink>
               </ListItem>
             </Collapse>
 
-            <Link to={"/inventory"}>
+            <NavLink to={"/inventory"}>
               <ListItem disablePadding sx={{ display: "block" }}>
                 <ListItemButton
                   sx={{
@@ -343,9 +341,9 @@ const Sidebar = (props) => {
                   />
                 </ListItemButton>
               </ListItem>
-            </Link>
+            </NavLink>
 
-            <Link to={"/newRequest"}>
+            <NavLink to={"/newRequest"}>
               <ListItem disablePadding sx={{ display: "block" }}>
                 <ListItemButton
                   sx={{
@@ -369,9 +367,9 @@ const Sidebar = (props) => {
                   />
                 </ListItemButton>
               </ListItem>
-            </Link>
+            </NavLink>
 
-            <Link to={"/reports"}>
+            <NavLink to={"/reports"}>
               <ListItem disablePadding sx={{ display: "block" }}>
                 <ListItemButton
                   sx={{
@@ -395,9 +393,9 @@ const Sidebar = (props) => {
                   />
                 </ListItemButton>
               </ListItem>
-            </Link>
+            </NavLink>
 
-            <Link to={"/auth"}>
+            <NavLink to={"/auth"}>
               <ListItem disablePadding sx={{ display: "block" }}>
                 <ListItemButton
                   sx={{
@@ -421,7 +419,7 @@ const Sidebar = (props) => {
                   />
                 </ListItemButton>
               </ListItem>
-            </Link>
+            </NavLink>
           </List>
         </Box>
         <DrawerHeader className="drawer-bottom">

@@ -12,8 +12,16 @@ import {
   TableContainer,
 } from "@mui/material";
 import "./DetailedGoodReceipt.scss";
+import { makeStyles } from '@mui/styles';
+
+const useStyles = makeStyles({
+  table: {
+    minWidth: 650
+  }
+});
 
 const DetailedGoodReceipt = () => {
+  const classes = useStyles();
   const [dummyData, setDummyData] = useState([
     {
       requestNo: "REQ-001",
@@ -47,9 +55,10 @@ const DetailedGoodReceipt = () => {
   const nevigate = useNavigate();
 
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: {sm:"block", md:'block', lg:'flex'} }}>
       <Sidebar />
       <Box component="main" sx={{ flexGrow: 1, p: 3, mt: "110px" }}>
+        <Box sx={{ml:'60px'}}>
         <Typography
           variant="div"
           sx={{ display: "flex", justifyContent: "center" }}
@@ -74,9 +83,10 @@ const DetailedGoodReceipt = () => {
             return (
               <Box
                 sx={{
-                  display: "flex",
-                  justifyContent: "space-around",
+                  display: {sm:'block', md:'flex'},
+                  justifyContent: {sm:'center', md:"space-around"},
                   margin: "20px 0px",
+                  textAlign:'center'
                 }}
               >
                 <Box>
@@ -106,12 +116,13 @@ const DetailedGoodReceipt = () => {
           })}
         </Box>
         <Box className="detailed">
-          <Paper>
+         
             <TableContainer
-              component={Paper}
-              style={{ maxHeight: 400, marginTop: "50px" }}
+              component={Paper}  
+              style={{ maxHeight: 400, marginTop: "50px",overflowX: 'auto',}}
             >
               <Table
+              className={classes.table}
                 stickyHeader
                 aria-label=" "
                 sx={{ mt: "20px", overflowX: "auto" }}
@@ -163,7 +174,7 @@ const DetailedGoodReceipt = () => {
               <Typography>Total Received Quantity : 40</Typography>
               <Typography>Total Receipt Amount : $400</Typography>
             </Box>
-          </Paper>
+    
 
           <Box
             sx={{ display: "flex", justifyContent: "center", m: "50px 0px" }}
@@ -174,6 +185,7 @@ const DetailedGoodReceipt = () => {
               Reject
             </Button>
           </Box>
+        </Box>
         </Box>
       </Box>
     </Box>

@@ -35,6 +35,14 @@ h6{
   
 }
 
+@media (max-width: 600px) {
+  .management-container th,
+  .management-container td {
+    padding: 8px !important;
+    font-size: 12px !important;
+  }
+}
+
 @media only screen and (max-width: 784px){
     .management-container{
  

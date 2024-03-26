@@ -81,9 +81,10 @@ const InventoryUpdate = () => {
     setPage(0);
   };
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: {sm:"block", md:'block', lg:'flex'} }}>
       <Sidebar />
       <Box component="main" sx={{ flexGrow: 1, p: 3, mt: "110px" }}>
+      <Box sx={{marginLeft:'40px'}}>
       <Typography
           variant="div"
           sx={{ display: "flex", justifyContent: "center" }}
@@ -168,6 +169,7 @@ const InventoryUpdate = () => {
             onRowsPerPageChange={handleChangeRowsPerPage}
           />
         </Paper>
+      </Box>
       </Box>
     </Box>
   );

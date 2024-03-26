@@ -198,42 +198,44 @@ const Reports = () => {
   const [tickPlacement, setTickPlacement] = React.useState('middle');
   const [tickLabelPlacement, setTickLabelPlacement] = React.useState('middle');
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: { sm: "block", md: "block", lg: "flex" }  }}>
       <Sidebar />
       <Box component="main" sx={{ flexGrow: 1, p: 3, mt: "110px" }}>
-      <div style={{ width: '100%' }}>
+     <Box sx={{ml:'60px'}}>
+     <div style={{ width: '100%' }}>
      
-      <BarChart
-        dataset={dataset}
-        xAxis={[
-          { scaleType: 'band', dataKey: 'month', tickPlacement, tickLabelPlacement },
-        ]}
-        {...chartSetting}
-      />
-    </div>
-    <div style={{marginTop:'50px'}}>
-      <Typography sx={{textAlign:'center',marginBottom:"20px",marginLeft:'-76px'}}>Salse In Countries($)</Typography>
-    <PieChart
-      series={[
-        {
-          data,
-          highlightScope: { faded: 'global', highlighted: 'item' },
-          faded: { innerRadius: 30, additionalRadius: -30, color: 'gray' },
-        },
-      ]}
-      height={200}
-    />
-    </div>
-    <div style={{display:'flex', justifyContent:'center', margin:'50px 0px'}}>
-    <BarChart
-      dataset={dataset2}
-      yAxis={[{ scaleType: 'band', dataKey: 'country' }]}
-      series={[{ dataKey: 'sale', label: 'World Wide Production', valueFormatter2 }]}
-      layout="horizontal"
-      grid={{ vertical: true }}
-      {...chartSetting2}
-    />
-    </div>
+     <BarChart
+       dataset={dataset}
+       xAxis={[
+         { scaleType: 'band', dataKey: 'month', tickPlacement, tickLabelPlacement },
+       ]}
+       {...chartSetting}
+     />
+   </div>
+   <div style={{marginTop:'50px'}}>
+     <Typography sx={{textAlign:'center',marginBottom:"20px",marginLeft:'-76px'}}>Salse In Countries($)</Typography>
+   <PieChart
+     series={[
+       {
+         data,
+         highlightScope: { faded: 'global', highlighted: 'item' },
+         faded: { innerRadius: 30, additionalRadius: -30, color: 'gray' },
+       },
+     ]}
+     height={200}
+   />
+   </div>
+   <div style={{display:'flex', justifyContent:'center', margin:'50px 0px'}}>
+   <BarChart
+     dataset={dataset2}
+     yAxis={[{ scaleType: 'band', dataKey: 'country' }]}
+     series={[{ dataKey: 'sale', label: 'World Wide Production', valueFormatter2 }]}
+     layout="horizontal"
+     grid={{ vertical: true }}
+     {...chartSetting2}
+   />
+   </div>
+     </Box>
       </Box>
     </Box>
   );

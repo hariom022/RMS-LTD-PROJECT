@@ -22,9 +22,10 @@ const Authentication = () => {
   }
 
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: {sm:"block", md:'block', lg:'flex'}}}>
       <Sidebar />
       <Box component="main" sx={{ flexGrow: 1, p: 3, mt: "110px", overflowX:'auto' }}>
+        <Box sx={{ml:'60px'}}>
         <Typography sx={{m:'20px 0px'}}>Grant access to your Inventory by adding users and setting their roles to control who can do what. An agency can create Admins, Managers, Supervisors and General Users.</Typography>
         <Box sx={{display:'flex', justifyContent:'space-between', }}>
         <TextField
@@ -63,6 +64,7 @@ const Authentication = () => {
         </TableBody>
       </Table>
     </TableContainer>
+        </Box>
       </Box>
     </Box>
   );
