@@ -193,11 +193,11 @@ const Sidebar = (props) => {
           className="drawer-header "
           sx={{ display: "flex", justifyContent: "space-around" }}
         >
-          <img
+          {/* <img
             src="https://www.rmsltd.rw/index.php?eID=dumpFile&t=f&f=10775&token=b1e36e4e74fa57ae0af2aa021c502f36e86dff2e"
             height="30px"
-          />
-          <Typography sx={{ color: "#fff" }}>RMS</Typography>
+          /> */}
+          <Typography variant="h5" sx={{ color: "#fff",fontWeight:'bold' }}><span style={{color:'#054D6F'}}>R</span><span style={{color:'rgb(200 131 31)'}}>M</span ><span style={{    color: "#116711"}}>S</span> </Typography>
         </DrawerHeader>
         <Divider />
         <List className="list-items">
