@@ -17,6 +17,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
+import {useMediaQuery} from "@mui/material"
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import AdbIcon from "@mui/icons-material/Adb";
@@ -109,6 +110,7 @@ const Sidebar = (props) => {
   const [isMobile, setIsMobile] = useState(
     window.innerWidth <= mobileThreshold
   );
+ 
 
   const handleDrawer = () => {
     if (open == false) {
@@ -130,13 +132,13 @@ const Sidebar = (props) => {
       }
       
     };
-
     window.addEventListener("resize", handleResize);
-
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, [open]);
+
+  
 
   return (
     <Box sx={{ display: "flex" }}>
@@ -188,7 +190,7 @@ const Sidebar = (props) => {
         </Box>
       </AppBar>
 
-      <Drawer variant="permanent" open={open}>
+      <Drawer variant="permanent" open={open} >
         <DrawerHeader
           className="drawer-header "
           sx={{ display: "flex", justifyContent: "space-around" }}
@@ -202,7 +204,7 @@ const Sidebar = (props) => {
         <Divider />
         <List className="list-items">
           <NavLink to={"/"}>
-            <ListItem disablePadding sx={{ display: "block" }}>
+            <ListItem disablePadding sx={{ display: "block" }} >
               <ListItemButton
                 sx={{
                   minHeight: 48,
@@ -216,6 +218,7 @@ const Sidebar = (props) => {
                     mr: open ? 3 : "auto",
                     justifyContent: "center",
                   }}
+                  
                 >
                   <DashboardIcon />
                 </ListItemIcon>
