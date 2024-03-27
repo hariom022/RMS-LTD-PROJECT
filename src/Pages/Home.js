@@ -126,7 +126,7 @@ const Home = () => {
                     sx={{ display: "flex", justifyContent: "space-between" }}
                   >
                     <Box sx={{ p: "0px 0px 0px 5px" }}>
-                      <Typography variant="h5" sx={{ textAlign: "start" }}>
+                      <Typography variant="h5" sx={{ textAlign: "start",fontWeight:"bold" }}>
                         <CountUp delay={0.4} end={26} duration={0.6} />K{" "}
                         <span style={{ fontSize: "12px" }}>(-12.4%) </span>
                       </Typography>
@@ -175,7 +175,7 @@ const Home = () => {
                     sx={{ display: "flex", justifyContent: "space-between" }}
                   >
                     <Box sx={{ p: "0px 0px 0px 5px" }}>
-                      <Typography variant="h5" sx={{ textAlign: "start" }}>
+                      <Typography variant="h5" sx={{ textAlign: "start",fontWeight:"bold" }}>
                         $<CountUp delay={0.4} end={123} duration={0.6} />
                         .54
                         <span style={{ fontSize: "12px" }}>(+20.4%) </span>
@@ -223,7 +223,7 @@ const Home = () => {
                     sx={{ display: "flex", justifyContent: "space-between" }}
                   >
                     <Box sx={{ p: "0px 0px 0px 5px" }}>
-                      <Typography variant="h5" sx={{ textAlign: "start" }}>
+                      <Typography variant="h5" sx={{ textAlign: "start",fontWeight:"bold" }}>
                         $123554.54{" "}
                         <span style={{ fontSize: "12px" }}>(+543.4%) </span>
                       </Typography>
@@ -274,7 +274,7 @@ const Home = () => {
                     sx={{ display: "flex", justifyContent: "space-between" }}
                   >
                     <Box sx={{ p: "0px 0px 0px 5px" }}>
-                      <Typography variant="h5" sx={{ textAlign: "start" }}>
+                      <Typography variant="h5" sx={{ textAlign: "start",fontWeight:"bold" }}>
                         Low Stock
                       </Typography>
 
