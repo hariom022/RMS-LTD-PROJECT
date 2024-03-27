@@ -102,6 +102,7 @@ const Drawer = styled(MuiDrawer, {
 }));
 
 const Sidebar = (props) => {
+
   const theme = useTheme();
   const [open, setOpen] = React.useState(true);
   const [isCollapse, setIsCollapse] = useState(false);
@@ -251,10 +252,8 @@ const Sidebar = (props) => {
                   >
                     <ShoppingCartIcon />
                   </ListItemIcon>
-                  <ListItemText
-                    primary="User Management"
-                    sx={{ opacity: open ? 1 : 0 }}
-                  />
+                  <ListItemText sx={{ opacity: open ? 1 : 0 }}>User Management</ListItemText>
+                  
                 </ListItemButton>
               </ListItem>
             </NavLink>
@@ -280,10 +279,8 @@ const Sidebar = (props) => {
                 >
                   <AdbIcon />
                 </ListItemIcon>
-                <ListItemText
-                  primary="Master Data"
-                  sx={{ opacity: open ? 1 : 0 }}
-                />
+                <ListItemText sx={{ opacity: open ? 1 : 0 }}>Master Data</ListItemText>
+                
                 <Typography sx={{ opacity: open ? 1 : 0, width: "0px" }}>
                   {isCollapse ? <ExpandLessIcon /> : <ExpandMoreIcon />}
                 </Typography>
@@ -293,26 +290,20 @@ const Sidebar = (props) => {
             <Collapse in={isCollapse} timeout={"auto"} unmountOnExit>
               <ListItem>
                 <NavLink to={"/masterData"}>
-                  <ListItemText
-                    primary="Master Data 1"
-                    sx={{ opacity: open ? 1 : 0, marginLeft: "53px" }}
-                  />
+                  <ListItemText sx={{ opacity: open ? 1 : 0, marginLeft: "53px" }}>Master Data 1</ListItemText>
+                 
                 </NavLink>
               </ListItem>
               <ListItem>
                 <NavLink to={"/masterData"}>
-                  <ListItemText
-                    primary="Master Data 2"
-                    sx={{ opacity: open ? 1 : 0, marginLeft: "53px" }}
-                  />
+                <ListItemText sx={{ opacity: open ? 1 : 0, marginLeft: "53px" }}>Master Data 2</ListItemText>
+
                 </NavLink>
               </ListItem>
               <ListItem>
                 <NavLink to={"/masterData"}>
-                  <ListItemText
-                    primary="Master Data 3"
-                    sx={{ opacity: open ? 1 : 0, marginLeft: "53px" }}
-                  />
+                <ListItemText sx={{ opacity: open ? 1 : 0, marginLeft: "53px" }}>Master Data 3</ListItemText>
+
                 </NavLink>
               </ListItem>
             </Collapse>
@@ -335,10 +326,8 @@ const Sidebar = (props) => {
                   >
                     <InventoryIcon />
                   </ListItemIcon>
-                  <ListItemText
-                    primary="Inventory Update"
-                    sx={{ opacity: open ? 1 : 0 }}
-                  />
+                  <ListItemText sx={{ opacity: open ? 1 : 0 }}>Inventory Update</ListItemText>
+                  
                 </ListItemButton>
               </ListItem>
             </NavLink>
@@ -361,10 +350,8 @@ const Sidebar = (props) => {
                   >
                     <NotificationsIcon />
                   </ListItemIcon>
-                  <ListItemText
-                    primary="New Request"
-                    sx={{ opacity: open ? 1 : 0 }}
-                  />
+                  <ListItemText sx={{ opacity: open ? 1 : 0 }}>New Request</ListItemText>
+                 
                 </ListItemButton>
               </ListItem>
             </NavLink>
@@ -387,10 +374,8 @@ const Sidebar = (props) => {
                   >
                     <BugReportIcon />
                   </ListItemIcon>
-                  <ListItemText
-                    primary="Reports"
-                    sx={{ opacity: open ? 1 : 0 }}
-                  />
+                  <ListItemText sx={{ opacity: open ? 1 : 0 }}>Reports</ListItemText>
+                 
                 </ListItemButton>
               </ListItem>
             </NavLink>
@@ -413,10 +398,8 @@ const Sidebar = (props) => {
                   >
                     <PersonAddAlt1Icon />
                   </ListItemIcon>
-                  <ListItemText
-                    primary="Role & Authentication"
-                    sx={{ opacity: open ? 1 : 0 }}
-                  />
+                  <ListItemText sx={{ opacity: open ? 1 : 0 }}>Role & Authentication</ListItemText>
+                 
                 </ListItemButton>
               </ListItem>
             </NavLink>

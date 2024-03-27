@@ -31,7 +31,7 @@ const Authentication = () => {
         <TextField
         label="Search by Role"
         variant="outlined"
-        style={{ marginBottom: '20px' }}
+        style={{ marginBottom: '20px' ,background:'#fff'}}
       />
       <Link to={'/signup'}>
       <Button variant="contained" sx={{height:"60px", background:'#2982cc'}}>+Add New User</Button>

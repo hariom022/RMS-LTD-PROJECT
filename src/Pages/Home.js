@@ -49,6 +49,7 @@ import {
   ComposedChart,
   ReferenceLine,
   ResponsiveContainer,
+  ReferenceDot
 } from "recharts";
 import { Bar } from "recharts";
 
@@ -150,7 +151,8 @@ const Home = () => {
                     >
                       <Tooltip />
                       <Legend />
-                      <Line type="monotone" dataKey="pv" stroke="#8884d8" fillOpacity={0} fill="url(#colorUv)"/>
+                      <Line type="monotone" r={10} dataKey="pv" stroke="#fff" fillOpacity={0.3} fill="#fff"/>
+                       
                     </LineChart>
                   </div>
                 </CardContent>
@@ -198,7 +200,7 @@ const Home = () => {
                     >
                       <Tooltip />
                       <Legend />
-                      <Line type="monotone" dataKey="pv" stroke="#8884d8" />
+                      <Line type="monotone" r={10} dataKey="pv" stroke="#fff" fillOpacity={0.3} fill="#fff" />
                     </LineChart>
                   </div>
                 </CardContent>
@@ -243,7 +245,6 @@ const Home = () => {
                       data={inventoryAreaChart}
                     >
                       {/* <CartesianGrid strokeDasharray="3 3" /> */}
-
                       <Tooltip />
                       <Area
                         type="monotone"
@@ -361,14 +362,14 @@ const Home = () => {
                   }}
                 >
                   <Box>
-                    <Typography variant="h6" sx={{ background: "#fff" }}>
+                    <Typography variant="h6" sx={{ background: "#fff",fontWeight:"bold" }}>
                       89K
                     </Typography>
                     <Typography>FRIENDS</Typography>
                   </Box>
                   <Divider />
                   <Box>
-                    <Typography variant="h6" sx={{ background: "#fff" }}>
+                    <Typography variant="h6" sx={{ background: "#fff" ,fontWeight:"bold"}}>
                       459
                     </Typography>
                     <Typography>FEED</Typography>
@@ -428,14 +429,14 @@ const Home = () => {
                   }}
                 >
                   <Box>
-                    <Typography variant="h6" sx={{ background: "#fff" }}>
+                    <Typography variant="h6" sx={{ background: "#fff",fontWeight:"bold" }}>
                       989K
                     </Typography>
                     <Typography>FOLLOWERS</Typography>
                   </Box>
                   <Divider />
                   <Box>
-                    <Typography variant="h6" sx={{ background: "#fff" }}>
+                    <Typography variant="h6" sx={{ background: "#fff",fontWeight:"bold" }}>
                       792
                     </Typography>
                     <Typography>TWEETS</Typography>
@@ -494,14 +495,14 @@ const Home = () => {
                   }}
                 >
                   <Box>
-                    <Typography variant="h6" sx={{ background: "#fff" }}>
+                    <Typography variant="h6" sx={{ background: "#fff",fontWeight:"bold" }}>
                       500
                     </Typography>
                     <Typography>CONTACTS</Typography>
                   </Box>
                   <Divider />
                   <Box>
-                    <Typography variant="h6" sx={{ background: "#fff" }}>
+                    <Typography variant="h6" sx={{ background: "#fff",fontWeight:"bold" }}>
                       1.292
                     </Typography>
                     <Typography>FEED</Typography>
@@ -560,14 +561,14 @@ const Home = () => {
                   }}
                 >
                   <Box>
-                    <Typography variant="h6" sx={{ background: "#fff" }}>
+                    <Typography variant="h6" sx={{ background: "#fff",fontWeight:"bold" }}>
                       12+
                     </Typography>
                     <Typography>EVENTS</Typography>
                   </Box>
                   <Divider />
                   <Box>
-                    <Typography variant="h6" sx={{ background: "#fff" }}>
+                    <Typography variant="h6" sx={{ background: "#fff",fontWeight:"bold" }}>
                       4
                     </Typography>
                     <Typography>MEETING</Typography>
