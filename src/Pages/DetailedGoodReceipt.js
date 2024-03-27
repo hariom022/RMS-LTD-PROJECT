@@ -11,7 +11,6 @@ import {
   Paper,
   TableContainer,
 } from "@mui/material";
-import "./DetailedGoodReceipt.scss";
 import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles({

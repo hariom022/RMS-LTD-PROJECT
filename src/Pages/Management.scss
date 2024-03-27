@@ -1,28 +1,6 @@
 .management-text{
   width: 40%;
 }
-.management-container {
-  .approve-btn {
-    background: #2982cc;
-    color: #fff;
-    margin-left: 5px;
-    margin-right: 10px;
-    &:hover {
-        background: #2d622d;
-    color: #fff;
-      }
-  }
-
-
-  .reject-btn {
-    background-color: #d93737;
-    color: #fff;
-    &:hover {
-      color: #fff;
-      background-color: black;
-    }
-  }
-}
 
 h6{
     background:#fbb2b2;

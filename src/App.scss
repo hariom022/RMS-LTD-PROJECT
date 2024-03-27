@@ -19,6 +19,29 @@
 }
 body{
 
-  font-family: "Avenir-Medium" ;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+
+
+    .approve-btn {
+      background: #51d0de !important;
+      color: #fff !important;
+      margin-left: 5px !important  ;
+      margin-right: 10px !important;
+      &:hover {
+          background: #2982cc !important;
+      color: #fff !important;
+        }
+    }
+  
+  
+    .reject-btn {
+      background-color: #ff414e !important;
+      color: #fff !important;
+      &:hover {
+        color: #fff !important;
+        background-color: #4f5f76 !important;
+      }
+    }
+  
 
 }

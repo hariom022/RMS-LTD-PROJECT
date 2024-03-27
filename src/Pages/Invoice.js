@@ -8,7 +8,6 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import "./Invoice.scss";
 import { Link, useNavigate } from "react-router-dom";
 
 const TAX_RATE = 0.07;
@@ -54,7 +53,7 @@ const Invoice = () => {
           <Typography
             className="invoice-text"
             variant="h6"
-            sx={{ background: "#1a1ac2", color: "#fff", borderRadius: "10px" }}
+            sx={{ background: "#1a1ac2", color: "#fff", borderRadius: "10px", width: "40%" }}
           >
             Invoice
           </Typography>

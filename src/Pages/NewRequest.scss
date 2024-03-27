@@ -1,26 +1,7 @@
 .qtn-approv-text {
   width: 40%;
 }
-.newRequest-container {
-  .approve-btn {
-    background: #2982cc;
-    color: #fff;
-    margin-left: 5px;
-    margin-right: 10px;
-    &:hover {
-      background: #2d622d;
-      color: #fff;
-    }
-  }
-  .reject-btn {
-    background-color: #d93737;
-    color: #fff;
-    &:hover {
-      color: #fff;
-      background-color: black;
-    }
-  }
-}
+
 
 @media only screen and (max-width: 784px) {
   .qtn-approv-text {

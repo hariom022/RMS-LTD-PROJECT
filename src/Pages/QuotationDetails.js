@@ -10,7 +10,6 @@ import TableHead from "@mui/material/TableHead";
 import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import './QuotationDetails.scss'
 
 const columns = [
   { id: "ProductCode", label: "Product Code", minWidth: 100, align: "center" },

@@ -150,7 +150,7 @@ const Home = () => {
                     >
                       <Tooltip />
                       <Legend />
-                      <Line type="monotone" dataKey="pv" stroke="#8884d8" />
+                      <Line type="monotone" dataKey="pv" stroke="#8884d8" fillOpacity={0} fill="url(#colorUv)"/>
                     </LineChart>
                   </div>
                 </CardContent>
@@ -299,7 +299,7 @@ const Home = () => {
                         fill="#8884d8"
                         stroke="#8884d8"
                       />
-                      <Bar dataKey="pv" barSize={20} fill="#413ea0" />
+                      <Bar dataKey="pv" barSize={20} fill="#fff" opacity={0.3}/>
                     </ComposedChart>
                   </div>
                 </CardContent>
@@ -392,6 +392,7 @@ const Home = () => {
                           dataKey="uv"
                           stroke="#8884d8"
                           fill="#8884d8"
+                          opacity={0.7}
                         />
                       </AreaChart>
                       <Box
