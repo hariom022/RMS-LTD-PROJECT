@@ -17,10 +17,9 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import {useMediaQuery} from "@mui/material"
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import AdbIcon from "@mui/icons-material/Adb";
+import AdbIcon from "@mui/icons-material/Adb"; 
 import InventoryIcon from "@mui/icons-material/Inventory";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import BugReportIcon from "@mui/icons-material/BugReport";
@@ -31,9 +30,9 @@ import DraftsIcon from "@mui/icons-material/Drafts";
 import { Collapse } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
-
 import { Link, NavLink } from "react-router-dom";
 import BasicBreadcrumbs from "./BasicBreadcrumbs";
+import { useMediaQuery } from '@mui/material';
 
 const drawerWidth = 270;
 const mobileThreshold = 900; // Adjust as needed
@@ -110,6 +109,21 @@ const Sidebar = (props) => {
   const [isMobile, setIsMobile] = useState(
     window.innerWidth <= mobileThreshold
   );
+  const isMobileView = useMediaQuery('(max-width:600px)');
+
+    // Function to toggle drawer state
+  const toggleDrawer = () => {
+    setOpen(!open);
+  };
+
+  // Function to close drawer when a navigation item is clicked
+  const handleCloseDrawer = () => {
+    if (isMobileView) {
+      setOpen(false);
+    }
+  };
+
+
  
 
   const handleDrawer = () => {
@@ -130,8 +144,9 @@ const Sidebar = (props) => {
       if (window.innerWidth <= mobileThreshold && open) {
         setOpen(false);
       }
-      
+     
     };
+
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
@@ -190,7 +205,7 @@ const Sidebar = (props) => {
         </Box>
       </AppBar>
 
-      <Drawer variant="permanent" open={open} >
+      <Drawer variant="permanent" open={open} onClose={toggleDrawer} >
         <DrawerHeader
           className="drawer-header "
           sx={{ display: "flex", justifyContent: "space-around" }}
@@ -204,7 +219,7 @@ const Sidebar = (props) => {
         <Divider />
         <List className="list-items">
           <NavLink to={"/"}>
-            <ListItem disablePadding sx={{ display: "block" }} >
+            <ListItem disablePadding sx={{ display: "block" }} onClick={handleCloseDrawer}>
               <ListItemButton
                 sx={{
                   minHeight: 48,
@@ -238,7 +253,7 @@ const Sidebar = (props) => {
             </ListItem>
 
             <NavLink to={"/management"}>
-              <ListItem disablePadding sx={{ display: "block" }}>
+              <ListItem disablePadding sx={{ display: "block" }} onClick={handleCloseDrawer}>
                 <ListItemButton
                   sx={{
                     minHeight: 48,
@@ -291,19 +306,19 @@ const Sidebar = (props) => {
             </ListItem>
 
             <Collapse in={isCollapse} timeout={"auto"} unmountOnExit>
-              <ListItem>
+              <ListItem onClick={handleCloseDrawer}>
                 <NavLink to={"/masterData"}>
                   <ListItemText sx={{ opacity: open ? 1 : 0, marginLeft: "53px" }}>Master Data 1</ListItemText>
                  
                 </NavLink>
               </ListItem>
-              <ListItem>
+              <ListItem onClick={handleCloseDrawer}>
                 <NavLink to={"/masterData"}>
                 <ListItemText sx={{ opacity: open ? 1 : 0, marginLeft: "53px" }}>Master Data 2</ListItemText>
 
                 </NavLink>
               </ListItem>
-              <ListItem>
+              <ListItem onClick={handleCloseDrawer}>
                 <NavLink to={"/masterData"}>
                 <ListItemText sx={{ opacity: open ? 1 : 0, marginLeft: "53px" }}>Master Data 3</ListItemText>
 
@@ -312,7 +327,7 @@ const Sidebar = (props) => {
             </Collapse>
 
             <NavLink to={"/inventory"}>
-              <ListItem disablePadding sx={{ display: "block" }}>
+              <ListItem disablePadding sx={{ display: "block" }} onClick={handleCloseDrawer}>
                 <ListItemButton
                   sx={{
                     minHeight: 48,
@@ -336,7 +351,7 @@ const Sidebar = (props) => {
             </NavLink>
 
             <NavLink to={"/newRequest"}>
-              <ListItem disablePadding sx={{ display: "block" }}>
+              <ListItem disablePadding sx={{ display: "block" }} onClick={handleCloseDrawer}>
                 <ListItemButton
                   sx={{
                     minHeight: 48,
@@ -360,7 +375,7 @@ const Sidebar = (props) => {
             </NavLink>
 
             <NavLink to={"/reports"}>
-              <ListItem disablePadding sx={{ display: "block" }}>
+              <ListItem disablePadding sx={{ display: "block" }} onClick={handleCloseDrawer}>
                 <ListItemButton
                   sx={{
                     minHeight: 48,
@@ -384,7 +399,7 @@ const Sidebar = (props) => {
             </NavLink>
 
             <NavLink to={"/auth"}>
-              <ListItem disablePadding sx={{ display: "block" }}>
+              <ListItem disablePadding sx={{ display: "block" }} onClick={handleCloseDrawer}>
                 <ListItemButton
                   sx={{
                     minHeight: 48,
