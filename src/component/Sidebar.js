@@ -104,7 +104,7 @@ const Drawer = styled(MuiDrawer, {
 const Sidebar = (props) => {
 
   const theme = useTheme();
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(window.innerWidth >900);
   const [isCollapse, setIsCollapse] = useState(false);
   const [isMobile, setIsMobile] = useState(
     window.innerWidth <= mobileThreshold
@@ -208,7 +208,7 @@ const Sidebar = (props) => {
       <Drawer variant="permanent" open={open} onClose={toggleDrawer} >
         <DrawerHeader
           className="drawer-header "
-          sx={{ display: "flex", justifyContent: "space-around" }}
+          sx={{ display: "flex", justifyContent: "space-around",background: "rgba(0, 0, 21, 0.2)!important" }}
         >
           {/* <img
             src="https://www.rmsltd.rw/index.php?eID=dumpFile&t=f&f=10775&token=b1e36e4e74fa57ae0af2aa021c502f36e86dff2e"
@@ -217,7 +217,7 @@ const Sidebar = (props) => {
           <Typography variant="h5" sx={{ color: "#fff",fontWeight:'bold' }}><span style={{color:'#054D6F'}}>R</span><span style={{color:'rgb(200 131 31)'}}>M</span ><span style={{    color: "#116711"}}>S</span> </Typography>
         </DrawerHeader>
         <Divider />
-        <List className="list-items">
+        <List className="list-items" sx={{background:'#3c4b64 '}}>
           <NavLink to={"/"}>
             <ListItem disablePadding sx={{ display: "block" }} onClick={handleCloseDrawer}>
               <ListItemButton
@@ -232,6 +232,7 @@ const Sidebar = (props) => {
                     minWidth: 0,
                     mr: open ? 3 : "auto",
                     justifyContent: "center",
+                    color:"#D0D3D4"
                   }}
                   
                 >
@@ -243,8 +244,9 @@ const Sidebar = (props) => {
             </ListItem>
           </NavLink>
         </List>
-        <Box>
-          <List className="list-items" sx={{ paddingRight: "20px" }}>
+        <Box sx={{height:'100%',background:'#3c4b64 ' }}>
+        <Box sx={{height:'100% !important',background:'#3c4b64 ' }}>
+          <List className="list-items" sx={{ paddingRight: "20px", background:'#3c4b64 ' }}>
             <ListItem disablePadding sx={{ display: "block", px: 2.5 }}>
               <ListItemText
                 primary="COMPONENT"
@@ -266,6 +268,7 @@ const Sidebar = (props) => {
                       minWidth: 0,
                       mr: open ? 3 : "auto",
                       justifyContent: "center",
+                      color:"#D0D3D4"
                     }}
                   >
                     <ShoppingCartIcon />
@@ -293,6 +296,7 @@ const Sidebar = (props) => {
                     minWidth: 0,
                     mr: open ? 3 : "auto",
                     justifyContent: "center",
+                    color:"#D0D3D4"
                   }}
                 >
                   <AdbIcon />
@@ -340,6 +344,7 @@ const Sidebar = (props) => {
                       minWidth: 0,
                       mr: open ? 3 : "auto",
                       justifyContent: "center",
+                      color:"#D0D3D4"
                     }}
                   >
                     <InventoryIcon />
@@ -364,6 +369,7 @@ const Sidebar = (props) => {
                       minWidth: 0,
                       mr: open ? 3 : "auto",
                       justifyContent: "center",
+                      color:"#D0D3D4"
                     }}
                   >
                     <NotificationsIcon />
@@ -388,6 +394,7 @@ const Sidebar = (props) => {
                       minWidth: 0,
                       mr: open ? 3 : "auto",
                       justifyContent: "center",
+                      color:"#D0D3D4"
                     }}
                   >
                     <BugReportIcon />
@@ -412,6 +419,7 @@ const Sidebar = (props) => {
                       minWidth: 0,
                       mr: open ? 3 : "auto",
                       justifyContent: "center",
+                      color:"#D0D3D4"
                     }}
                   >
                     <PersonAddAlt1Icon />
@@ -423,7 +431,8 @@ const Sidebar = (props) => {
             </NavLink>
           </List>
         </Box>
-        <DrawerHeader className="drawer-bottom">
+        </Box>
+        <DrawerHeader className="drawer-bottom" sx={{background:'rgba(0, 0, 21, 0.2)!important'}}>
           <IconButton onClick={handleDrawer} className="toggal-btn">
             {theme.direction === "rtl" ? (
               <ChevronRightIcon />

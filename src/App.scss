@@ -16,6 +16,7 @@ body{
       &:hover {
           background: #2982cc !important;
       color: #fff !important;
+      transition: 0.3s ease-in-out;
         }
     }
   
@@ -26,6 +27,7 @@ body{
       &:hover {
         color: #fff !important;
         background-color: #4f5f76 !important;
+        transition: 0.3s ease-in-out;
       }
     }
   

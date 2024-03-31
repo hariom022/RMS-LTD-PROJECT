@@ -219,7 +219,7 @@ const Home = () => {
                   height: "200px",
                 }}
               >
-                <CardContent>
+                <CardContent  sx={{padding:'0px !important'}}>
                   <Box
                     sx={{ display: "flex", justifyContent: "space-between" }}
                   >
@@ -315,9 +315,9 @@ const Home = () => {
               <Grid item md={3} sm={6} xs={12}>
                 <Card
                   className={classes.card}
-                  sx={{ height: "200px", width: "100%" }}
+                  sx={{ height: "152px", width: "100%" }}
                 >
-                  <CardContent className="facebook-logo">
+                  <CardContent className="facebook-logo" sx={{padding:'0px !important'}}>
                     <div className={classes.chartContainer}>
                       <AreaChart width={480} height={200} data={facebookChart}>
                         {/* <CartesianGrid strokeDasharray="3 3" /> */}
@@ -381,9 +381,9 @@ const Home = () => {
               <Grid item md={3} sm={6} xs={12}>
                 <Card
                   className={classes.card}
-                  sx={{ height: "200px", width: "100%" }}
+                  sx={{ height: "152px", width: "100%" }}
                 >
-                  <CardContent className="twitter-logo">
+                  <CardContent className="twitter-logo"  sx={{padding:'0px !important'}}>
                     <div className={classes.chartContainer}>
                       <AreaChart width={480} height={200} data={twitterChart}>
                         {/* <CartesianGrid strokeDasharray="3 3" /> */}
@@ -448,9 +448,9 @@ const Home = () => {
               <Grid item md={3} sm={6} xs={12}>
                 <Card
                   className={classes.card}
-                  sx={{ height: "200px", width: "100%" }}
+                  sx={{ height: "152px", width: "100%" }}
                 >
-                  <CardContent className="linkedin-logo">
+                  <CardContent className="linkedin-logo"  sx={{padding:'0px !important'}}>
                     <div className={classes.chartContainer}>
                       <AreaChart width={480} height={200} data={linkedinChart}>
                         {/* <CartesianGrid strokeDasharray="3 3" /> */}
@@ -514,9 +514,9 @@ const Home = () => {
               <Grid item md={3} sm={6} xs={12}>
                 <Card
                   className={classes.card}
-                  sx={{ height: "200px", width: "100%" }}
+                  sx={{ height: "152px", width: "100%" }}
                 >
-                  <CardContent className="event-logo">
+                  <CardContent className="event-logo"  sx={{padding:'0px !important'}}>
                     <div className={classes.chartContainer}>
                       <AreaChart width={480} height={200} data={eventDataChart}>
                         {/* <CartesianGrid strokeDasharray="3 3" /> */}

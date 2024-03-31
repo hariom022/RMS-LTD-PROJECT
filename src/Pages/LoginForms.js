@@ -26,7 +26,7 @@ const LoginForms = () => {
   return (
     <Container maxWidth="xs" sx={{marginTop:'5%'}} className="form-container">
       <Typography variant="h4" align="center" gutterBottom>
-        <img src="https://www.rmsltd.rw/index.php?eID=dumpFile&t=f&f=10775&token=b1e36e4e74fa57ae0af2aa021c502f36e86dff2e" height={80}/>
+        <img src="logo.png" height={80}/>
       </Typography>
       <form onSubmit={handleSubmit}>
         <TextField
