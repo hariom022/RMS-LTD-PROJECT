@@ -33,6 +33,7 @@ import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import { Link, NavLink } from "react-router-dom";
 import BasicBreadcrumbs from "./BasicBreadcrumbs";
 import { useMediaQuery } from '@mui/material';
+import JoinRightIcon from '@mui/icons-material/JoinRight';
 
 const drawerWidth = 270;
 const mobileThreshold = 900; // Adjust as needed
@@ -312,20 +313,73 @@ const Sidebar = (props) => {
             <Collapse in={isCollapse} timeout={"auto"} unmountOnExit>
               <ListItem onClick={handleCloseDrawer}>
                 <NavLink to={"/masterData"}>
-                  <ListItemText sx={{ opacity: open ? 1 : 0, marginLeft: "53px" }}>Master Data 1</ListItemText>
+                <ListItemButton
+                  sx={{
+                    minHeight: 48,
+                    justifyContent: open ? "initial" : "center",
+                    px: 2.5,
+                  }}
+                >
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: open ? 3 : "auto",
+                      justifyContent: "center",
+                      color:"#D0D3D4"
+                    }}
+                  >
+                    <JoinRightIcon />
+                  </ListItemIcon>
+                  <ListItemText sx={{ opacity: open ? 1 : 0,  }}>Master Data 1</ListItemText>                  
+                </ListItemButton>
                  
                 </NavLink>
               </ListItem>
               <ListItem onClick={handleCloseDrawer}>
+                
                 <NavLink to={"/masterData"}>
-                <ListItemText sx={{ opacity: open ? 1 : 0, marginLeft: "53px" }}>Master Data 2</ListItemText>
-
+                <ListItemButton
+                  sx={{
+                    minHeight: 48,
+                    justifyContent: open ? "initial" : "center",
+                    px: 2.5,
+                  }}
+                >
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: open ? 3 : "auto",
+                      justifyContent: "center",
+                      color:"#D0D3D4"
+                    }}
+                  >
+                    <JoinRightIcon />
+                  </ListItemIcon>
+                  <ListItemText sx={{ opacity: open ? 1 : 0,  }}>Master Data 1</ListItemText>                  
+                </ListItemButton>
                 </NavLink>
               </ListItem>
               <ListItem onClick={handleCloseDrawer}>
                 <NavLink to={"/masterData"}>
-                <ListItemText sx={{ opacity: open ? 1 : 0, marginLeft: "53px" }}>Master Data 3</ListItemText>
-
+                <ListItemButton
+                  sx={{
+                    minHeight: 48,
+                    justifyContent: open ? "initial" : "center",
+                    px: 2.5,
+                  }}
+                >
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: open ? 3 : "auto",
+                      justifyContent: "center",
+                      color:"#D0D3D4"
+                    }}
+                  >
+                    <JoinRightIcon />
+                  </ListItemIcon>
+                  <ListItemText sx={{ opacity: open ? 1 : 0,  }}>Master Data 1</ListItemText>                  
+                </ListItemButton>
                 </NavLink>
               </ListItem>
             </Collapse>
