@@ -70,7 +70,16 @@ a{
     color: black !important;
 }
 
-.top-header{
-    
+
+@media only screen and (max-width:'1900px'){
+
+
+.css-2dum1v-MuiDrawer-docked{
+
+.css-1p823my-MuiListItem-root{
+    padding-left: 0px !important;
+}
+}
+
 }
 

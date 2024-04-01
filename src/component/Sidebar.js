@@ -247,7 +247,7 @@ const Sidebar = (props) => {
         </List>
         <Box sx={{height:'100%',background:'#3c4b64 ' }}>
         <Box sx={{height:'100% !important',background:'#3c4b64 ' }}>
-          <List className="list-items" sx={{ paddingRight: "20px", background:'#3c4b64 ' }}>
+          <List className="list-items" sx={{  background:'#3c4b64 ' }}>
             <ListItem disablePadding sx={{ display: "block", px: 2.5 }}>
               <ListItemText
                 primary="COMPONENT"
@@ -290,6 +290,7 @@ const Sidebar = (props) => {
                   minHeight: 48,
                   justifyContent: open ? "initial" : "center",
                   px: 2.5,
+                  width: "94%"
                 }}
               >
                 <ListItemIcon
