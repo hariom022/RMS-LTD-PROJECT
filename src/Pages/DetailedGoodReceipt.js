@@ -56,7 +56,7 @@ const DetailedGoodReceipt = () => {
   return (
     <Box sx={{ display: {sm:"block", md:'block', lg:'flex'} }}>
       <Sidebar />
-      <Box component="main" sx={{ flexGrow: 1, p: 3, mt: "110px" }}>
+      <Box component="main" sx={{ flexGrow: 1, p: 3, mt: "110px" }} className="main">
         <Box sx={{ml:'60px'}}>
         <Typography
           variant="div"

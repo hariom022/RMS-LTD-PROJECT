@@ -1,22 +1,39 @@
-.signup-form-container{
-    background-color: #fff;
-    padding: 50px 20px;
-    box-shadow: 2px 2px 20px ;
-    border-radius: 10px;
+.signup-form-container {
+  background-color: #fff;
+  padding: 50px 20px;
+  box-shadow: 2px 2px 20px;
+  border-radius: 10px;
 }
 form {
-    a{
-        color: blue;
-        text-decoration: underline;
-        text-align: center;
+  a {
+    color: blue;
+    text-decoration: underline;
+    text-align: center;
 
-        &:hover{
-            color: blue;
-        text-decoration: underline;
-        }
-        
+    &:hover {
+      color: blue;
+      text-decoration: underline;
     }
-    button{
-        background: linear-gradient(to right, #2E86C1, #c332c3);
+  }
+  button {
+    background: linear-gradient(to right, #2e86c1, #c332c3);
+  }
+}
+
+@media only screen and (max-width: "448px") {
+  .signup-form-container {
+    margin-top: 0% !important;
+    padding: 20px 10px;
+    background-color: #fff;
+    box-shadow: none;
+    border-radius: 0px ;
+    height: 100vh;
+    width: 100%;
+    
+
+    .form {
+      margin: 0px 20px;
+      margin: 0px 20px !important;
     }
+  }
 }

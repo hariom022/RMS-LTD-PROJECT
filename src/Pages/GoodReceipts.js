@@ -49,7 +49,7 @@ const GoodRecipts = () => {
       <Sidebar />
       <Box
         component="main"
-        sx={{ flexGrow: 1, p: 3, mt: "110px", overflowX: "auto" }}
+        sx={{ flexGrow: 1, p: 3, mt: "110px", overflowX: "auto" }} className="main"
       >
         <Box sx={{ ml: "60px" }}>
           <Typography

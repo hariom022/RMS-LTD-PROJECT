@@ -91,7 +91,7 @@ const QuotationDetails = () => {
   return (
     <Box sx={{ display: { sm: "block", md: "block", lg: "flex" } }}>
       <Sidebar />
-      <Box component="main" sx={{ flexGrow: 1, p: 3, mt: "110px" }}>
+      <Box component="main" sx={{ flexGrow: 1, p: 3, mt: "110px" }} className="main">
         <Box sx={{ml:'60px'}}>
         <Box sx={{display:'flex',justifyContent:'center', m:'0px 0px 40px 0px'}}>
         <Typography variant="h6" sx={{background: "#1a1ac2",borderRadius:'10px', width:'20%' , textAlign:"center",color:'#fff', width:'40%'}}>Quotation Details</Typography>

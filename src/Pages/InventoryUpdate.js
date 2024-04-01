@@ -9,7 +9,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
-
+import './InventoryUpdate.scss'
 const columns = [
   { id: "ProductCode", label: "Product Code", minWidth: 100, align: "center" },
   { id: "Description", label: " Description", minWidth: 100, align: "center" },
@@ -81,95 +81,110 @@ const InventoryUpdate = () => {
     setPage(0);
   };
   return (
-    <Box sx={{ display: {sm:"block", md:'block', lg:'flex'} }}>
+    <Box sx={{ display: { sm: "block", md: "block", lg: "flex" } }}>
       <Sidebar />
-      <Box component="main" sx={{ flexGrow: 1, p: 3, mt: "110px" }}>
-      <Box sx={{marginLeft:'40px'}}>
-      <Typography
-          variant="div"
-          sx={{ display: "flex", justifyContent: "center" }}
-        >
+      <Box
+        component="main"
+        sx={{ flexGrow: 1, p: 3, mt: "110px" }}
+        className="main"
+      >
+        <Box sx={{ marginLeft: "40px" }}>
           <Typography
-          className="good-receipt"
-            variant="h6"
-            sx={{ background: "#1a1ac2", color: "#fff", borderRadius: "10px", mb:'20px' }}
+            variant="div"
+            sx={{ display: "flex", justifyContent: "center" }}
           >
-            Inventory Update
+            <Typography
+              className="good-receipt"
+              variant="h6"
+              sx={{
+                background: "#1a1ac2",
+                color: "#fff",
+                borderRadius: "10px",
+                mb: "20px",
+              }}
+            >
+              Inventory Update
+            </Typography>
           </Typography>
-        </Typography>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            m: "10px 0px",
-          }}
-        >
-          <Button variant="contained" color="secondary">
-            + Add New Field
-          </Button>
-          <Typography variant="div">
-            <Button variant="contained" sx={{ m: "0px 5px" }}>
-              Download File
+          <Box
+          
+            sx={{
+              display: "flex",
+              justifyContent: "space-between",
+              m: "10px 0px",
+            }}
+            className='inventory-btn'
+          >
+            <Button variant="contained" color="secondary" className="inventory-add-field-btn">
+              + Add New Field
             </Button>
-            <Button variant="contained">Upload File</Button>
-          </Typography>
-        </Box>
-        <Paper sx={{ width: "100%",  }}>
-          <TableContainer sx={{ maxHeight: 600, overflowX: "auto" }}>
-            <Table stickyHeader aria-label="sticky table" sx={{overflowX: "auto"}}>
-              <TableHead>
-                <TableRow>
-                  {columns.map((column) => (
-                    <TableCell
-                      key={column.id}
-                      align={column.align}
-                      style={{ minWidth: column.minWidth }}
-                    >
-                      <Typography style={{ fontWeight: "bold" }}>
-                        {column.label}
-                      </Typography>
-                    </TableCell>
-                  ))}
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {rows
-                  .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                  .map((row) => {
-                    return (
-                      <TableRow
-                        hover
-                        role="checkbox"
-                        tabIndex={-1}
-                        key={row.code}
+            <Typography variant="div" className="inventory-update-btn">
+              <Button variant="contained" sx={{ m: "0px 5px" }}>
+                Download File
+              </Button>
+              <Button variant="contained" sx={{m:"5px"}}>Upload File</Button>
+            </Typography>
+          </Box>
+          <Paper sx={{ width: "100%" }} className="table-container">
+            <TableContainer sx={{ maxHeight: 600, overflowX: "auto" }} >
+              <Table
+                stickyHeader
+                aria-label="sticky table"
+                sx={{ overflowX: "auto" }}
+              >
+                <TableHead>
+                  <TableRow>
+                    {columns.map((column) => (
+                      <TableCell
+                        key={column.id}
+                        align={column.align}
+                        style={{ minWidth: column.minWidth }}
                       >
-                        {columns.map((column) => {
-                          const value = row[column.id];
-                          return (
-                            <TableCell key={column.id} align={column.align}>
-                              {column.format && typeof value === "number"
-                                ? column.format(value)
-                                : value}
-                            </TableCell>
-                          );
-                        })}
-                      </TableRow>
-                    );
-                  })}
-              </TableBody>
-            </Table>
-          </TableContainer>
-          <TablePagination
-            rowsPerPageOptions={[10, 25, 100]}
-            component="div"
-            count={rows.length}
-            rowsPerPage={rowsPerPage}
-            page={page}
-            onPageChange={handleChangePage}
-            onRowsPerPageChange={handleChangeRowsPerPage}
-          />
-        </Paper>
-      </Box>
+                        <Typography style={{ fontWeight: "bold" }}>
+                          {column.label}
+                        </Typography>
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {rows
+                    .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                    .map((row) => {
+                      return (
+                        <TableRow
+                          hover
+                          role="checkbox"
+                          tabIndex={-1}
+                          key={row.code}
+                        >
+                          {columns.map((column) => {
+                            const value = row[column.id];
+                            return (
+                              <TableCell key={column.id} align={column.align}>
+                                {column.format && typeof value === "number"
+                                  ? column.format(value)
+                                  : value}
+                              </TableCell>
+                            );
+                          })}
+                        </TableRow>
+                      );
+                    })}
+                </TableBody>
+              </Table>
+            </TableContainer>
+            <TablePagination
+              rowsPerPageOptions={[10, 25, 100]}
+              component="div"
+              count={rows.length}
+              rowsPerPage={rowsPerPage}
+              page={page}
+              onPageChange={handleChangePage}
+              onRowsPerPageChange={handleChangeRowsPerPage}
+            />
+          </Paper>
+        </Box>
       </Box>
     </Box>
   );

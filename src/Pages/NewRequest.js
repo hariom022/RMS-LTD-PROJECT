@@ -39,7 +39,7 @@ const NewRequest = () => {
   return (
     <Box sx={{ display: {sm:"block", md:'block', lg:'flex'} }}>
       <Sidebar />
-      <Box component="main" sx={{ flexGrow: 1, p: 3, mt: "110px" }}>
+      <Box component="main" sx={{ flexGrow: 1, p: 3, mt: "110px" }} className="main">
         <Box sx={{ml:"60px"}}>
         <Box sx={{display:'flex',justifyContent:'center', m:'0px 0px 40px 0px'}}>
         <Typography className="qtn-approv-text" variant="h6" sx={{background: "#1a1ac2",borderRadius:'10px', textAlign:"center",color:'#fff'}} >Quotation Approval Section</Typography>

@@ -36,7 +36,7 @@ const SignUpForm = () => {
   return (
     <Container maxWidth="xs" sx={{marginTop:'5%'}} className="signup-form-container">
       <Typography variant="h4" align="center" gutterBottom>
-        <img src="logo.png" height={80}/>
+        <img src="logo.png" height={80} />
       </Typography>
       <form onSubmit={handleSubmit}>
       <TextField
