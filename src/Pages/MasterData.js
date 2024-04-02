@@ -135,7 +135,7 @@ const MasterData = () => {
             Master Data
           </Typography>
         </Typography>
-        <Paper sx={{ width: "100%", overflowX: 'auto' , mt:'50px' }}>
+        <Paper sx={{ width: "100%", overflowX: 'auto' , mt:'20px' }}>
           <TableContainer sx={{ maxHeight: 600 }}>
             <Table stickyHeader aria-label="sticky table">
               <TableHead >

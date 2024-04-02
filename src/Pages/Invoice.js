@@ -48,17 +48,17 @@ const Invoice = () => {
         <Box sx={{ml:'60px'}}>
         <Typography
           variant="div"
-          sx={{ display: "flex", justifyContent: "center" }}
+          sx={{ display: "flex", justifyContent: "center",textAlign:'center' }}
         >
           <Typography
             className="invoice-text"
             variant="h6"
-            sx={{ background: "#1a1ac2", color: "#fff", borderRadius: "10px", width: "40%" }}
+            sx={{ background: "#1a1ac2", color: "#fff", borderRadius: "10px", width: "30%",padding: "5px 10px" }}
           >
             Invoice
           </Typography>
         </Typography>
-        <Box sx={{ border: "2px solid black", mt: "5%", background: "#fff" }}>
+        <Box sx={{ border: "2px solid black", mt: "2%", background: "#fff" }}>
           <Box
             sx={{
               display: "flex",

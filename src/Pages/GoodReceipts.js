@@ -36,6 +36,21 @@ const GoodRecipts = () => {
       GoodReceipt: "#019",
       Invoice: "INV-403551",
     },
+    {
+      id: 105,
+      GoodReceipt: "#017",
+      Invoice: "INV-403554",
+    },
+    {
+      id: 106,
+      GoodReceipt: "#070",
+      Invoice: "INV-403980",
+    },
+    {
+      id: 107,
+      GoodReceipt: "#090",
+      Invoice: "INV-403879",
+    },
   ]);
 
   const rejectDataHandler = (id) => {
@@ -51,7 +66,7 @@ const GoodRecipts = () => {
         component="main"
         sx={{ flexGrow: 1, p: 3, mt: "110px", overflowX: "auto" }} className="main"
       >
-        <Box sx={{ ml: "60px" }}>
+        <Box sx={{ ml: "50px" }}>
           <Typography
             variant="div"
             sx={{ display: "flex", justifyContent: "center" }}
@@ -60,9 +75,9 @@ const GoodRecipts = () => {
               className="good-receipt"
               variant="h6"
               sx={{
-                background: "#1a1ac2",
                 color: "#fff",
                 borderRadius: "10px",
+            
               }}
             >
               Good Receipt
@@ -71,7 +86,7 @@ const GoodRecipts = () => {
           <Paper>
             <TableContainer
               component={Paper}
-              style={{ maxHeight: 400, marginTop: "50px" }}
+              style={{ maxHeight: 600, marginTop: "20px" }}
             >
               <Table sx={{ mt: "20px", overflowX: "auto" }}>
                 <TableHead>

@@ -10,6 +10,7 @@ import TableHead from "@mui/material/TableHead";
 import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
 import { Link, NavLink, useNavigate } from "react-router-dom";
+import './QuotationDetails.scss'
 
 const columns = [
   { id: "ProductCode", label: "Product Code", minWidth: 100, align: "center" },
@@ -71,6 +72,8 @@ const rows = [
   createData("ABC123", "Product A", "EA", 50, "$14", "$700"),
   createData("ZAS123", "Product B", "KG", 15, "$20", "$300"),
   createData("DFF123", "Product C", "KG", 20, "$25", "$500"),
+  createData("GHI123", "Product D", "KG", 10, "$10", "$100"),
+  createData("JKL123", "Product E", "KG", 20, "$25", "$500"),
 ];
 const QuotationDetails = () => {
   const [page, setPage] = React.useState(0);
@@ -94,7 +97,7 @@ const QuotationDetails = () => {
       <Box component="main" sx={{ flexGrow: 1, p: 3, mt: "110px" }} className="main">
         <Box sx={{ml:'60px'}}>
         <Box sx={{display:'flex',justifyContent:'center', m:'0px 0px 40px 0px'}}>
-        <Typography variant="h6" sx={{background: "#1a1ac2",borderRadius:'10px', width:'20%' , textAlign:"center",color:'#fff', width:'40%'}}>Quotation Details</Typography>
+        <Typography className="quotation-details-text" variant="h6" sx={{p:"5px 10px",background: "#1a1ac2",borderRadius:'10px', width:'20%' , textAlign:"center",color:'#fff', width:'30%'}}>Quotation Details</Typography>
 
         </Box>
         <Box>

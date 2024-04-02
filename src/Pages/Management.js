@@ -51,6 +51,27 @@ const Management = ({ data }) => {
       obd: "OBD-789015",
       amount: " $872.50",
     },
+    {
+      id: 106,
+      Quotation: "QTN-005",
+      sales: "SN-1234544",
+      obd: "OBD-789016",
+      amount: " $543.50",
+    },
+    {
+      id: 107,
+      Quotation: "QTN-006",
+      sales: "SN-1234532",
+      obd: "OBD-789017",
+      amount: " $653.50",
+    },
+    {
+      id: 108,
+      Quotation: "QTN-007",
+      sales: "SN-1234564",
+      obd: "OBD-789018",
+      amount: " $883.50",
+    },
   ]);
 
   const rejectDataHandler = (id) => {
@@ -61,10 +82,10 @@ const Management = ({ data }) => {
     <Box sx={{ display: { sm: "block", md: "block", lg: "flex" } }}>
       <Sidebar />
       <Box component="main" sx={{ flexGrow: 1, p: 3, mt: "110px" }} className="main">
-        <Box sx={{ marginLeft: "60px" }}>
+        <Box sx={{ marginLeft: "50px" }}>
           <Typography
             variant="div"
-            sx={{ display: "flex", justifyContent: "center" }}
+            sx={{ display: "flex", justifyContent: "center", width:'100%' }}
           >
             <Typography
               className="management-text"
@@ -84,8 +105,8 @@ const Management = ({ data }) => {
             className={classes.tableContainer}
             style={{
               maxWidth: "100%",
-              maxHeight: 400,
-              marginTop: "50px",
+              maxHeight: 600,
+              marginTop: "20px",
               overflowX: "auto",
             }}
           >

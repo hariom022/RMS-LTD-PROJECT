@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Sidebar from "../component/Sidebar";
 import { Box, Typography, Button } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
+import './DetailedGoodReceipt.scss'
 import {
   Table,
   TableHead,
@@ -63,9 +64,9 @@ const DetailedGoodReceipt = () => {
           sx={{ display: "flex", justifyContent: "center" }}
         >
           <Typography
-            className="invoice-text"
+            className="detailed-good-text"
             variant="h6"
-            sx={{ background: "#1a1ac2", color: "#fff", borderRadius: "10px" }}
+            sx={{textAlign:'center', background: "#1a1ac2", color: "#fff", borderRadius: "10px",p:"5px 10px",width:'30%' }}
           >
             Detailed Goods Receipt
           </Typography>

@@ -211,11 +211,12 @@ const Sidebar = (props) => {
           className="drawer-header "
           sx={{ display: "flex", justifyContent: "space-around",background: "rgba(0, 0, 21, 0.2)!important" }}
         >
-          {/* <img
-            src="https://www.rmsltd.rw/index.php?eID=dumpFile&t=f&f=10775&token=b1e36e4e74fa57ae0af2aa021c502f36e86dff2e"
-            height="30px"
-          /> */}
-          <Typography variant="h5" sx={{ color: "#fff",fontWeight:'bold' }}><span style={{color:'#054D6F'}}>R</span><span style={{color:'rgb(200 131 31)'}}>M</span ><span style={{    color: "#116711"}}>S</span> </Typography>
+          <a href="/" style={{textDecoration:'none', marginTop:'7px'}}>
+          <img
+            src="logo.png" height={50}
+          />
+          </a>
+          {/* <Typography variant="h5" sx={{ color: "#fff",fontWeight:'bold' }}><span style={{color:'#054D6F'}}>R</span><span style={{color:'rgb(200 131 31)'}}>M</span ><span style={{    color: "#116711"}}>S</span> </Typography> */}
         </DrawerHeader>
         <Divider />
         <List className="list-items" sx={{background:'#3c4b64 '}}>
@@ -290,7 +291,7 @@ const Sidebar = (props) => {
                   minHeight: 48,
                   justifyContent: open ? "initial" : "center",
                   px: 2.5,
-                  width: "94%"
+                  width: "94% !important" 
                 }}
               >
                 <ListItemIcon
@@ -298,7 +299,8 @@ const Sidebar = (props) => {
                     minWidth: 0,
                     mr: open ? 3 : "auto",
                     justifyContent: "center",
-                    color:"#D0D3D4"
+                    color:"#D0D3D4",
+                   
                   }}
                 >
                   <AdbIcon />

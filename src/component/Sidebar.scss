@@ -1,25 +1,25 @@
-body{
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
-$primary-color:#D0D3D4;
-$secondary-color:#F7F9F9;
+$primary-color: #d0d3d4;
+$secondary-color: #f7f9f9;
 
-.active{
-    color: #fff;
-  
-    
+.active {
+  color: #fff;
 }
 .css-1hsz34s-MuiDrawer-docked {
   .MuiDrawer-paper {
-    background: #34495E  !important;
+    background: #34495e !important;
   }
 }
 
-.drawer-header{
-    background: rgba(0, 0, 21, 0.2)!important;
+.drawer-header {
+  background: rgba(0, 0, 21, 0.2) !important;
 }
-.css-12i7wg6-MuiPaper-root-MuiDrawer-paper{
-    background: #3c4b64  !important;
+.css-12i7wg6-MuiPaper-root-MuiDrawer-paper {
+  background: #3c4b64 !important;
 }
 .list-items {
   color: $primary-color;
@@ -27,59 +27,56 @@ $secondary-color:#F7F9F9;
     color: $primary-color !important;
   }
 }
-.css-1ddsiuw-MuiListItemIcon-root{
-    color: #fff !important;
+.css-1ddsiuw-MuiListItemIcon-root {
+  color: #fff !important;
 }
-.list-items:hover{
-    color: $secondary-color;
-    .css-wa5fuu-MuiListItemIcon-root:hover{
-        color: $secondary-color !important;
-    }
+.list-items:hover {
+  color: $secondary-color;
+  .css-wa5fuu-MuiListItemIcon-root:hover {
+    color: $secondary-color !important;
+  }
 }
-.drawer-bottom{
-    display: flex;
-    justify-content: space-between;
-    margin-block-start: auto;
-    background: rgba(0, 0, 21, 0.2) !important;
+.drawer-bottom {
+  display: flex;
+  justify-content: space-between;
+  margin-block-start: auto;
+  background: rgba(0, 0, 21, 0.2) !important;
 }
-.drawer-bottom{
-    .css-i4bv87-MuiSvgIcon-root {
-        color: $primary-color;
-        &:hover{
-            color: white;
-        }
-   }
-}
-
-
-header{
-    background: #fff !important;
-    color: black !important;
-    box-shadow: 2px 0px 3px !important;
-
-}
-a{
-    text-decoration: none;
+.drawer-bottom {
+  .css-i4bv87-MuiSvgIcon-root {
     color: $primary-color;
-    &:hover{
-        color: $secondary-color;
-      
+    &:hover {
+      color: white;
     }
-}
-.dashboard-header{
-    color: black !important;
+  }
 }
 
-
-@media only screen and (max-width:'1900px'){
-
-
-.css-2dum1v-MuiDrawer-docked{
-
-.css-1p823my-MuiListItem-root{
-    padding-left: 0px !important;
+header {
+  background: #fff !important;
+  color: black !important;
+  box-shadow: 2px 0px 3px !important;
 }
+a {
+  text-decoration: none;
+  color: $primary-color;
+  &:hover {
+    color: $secondary-color;
+  }
+}
+.dashboard-header {
+  color: black !important;
+}
+.MuiCollapse-entered {
+  margin-left: 5% !important;
+}
+.css-1yo8bqd {
+  padding: 0px !important;
 }
 
+@media only screen and (max-width: "1900px") {
+  .css-2dum1v-MuiDrawer-docked {
+    .css-1p823my-MuiListItem-root {
+      padding-left: 0px !important;
+    }
+  }
 }
-

@@ -1,4 +1,4 @@
-.master-data{
+.detailed-good-text{
     width: 30%;
   background: #1a1ac2;
   display: flex;
@@ -9,12 +9,8 @@
   padding: 5px 10px;
     font-size: 10px;
 }
-
-@media only screen and (max-width: 550px){
-  
-        .master-data{
-            width: 100% !important;
-        }
-    
-    
+@media only screen and (max-width: 600px){
+    .detailed-good-text{
+        width: 80% !important;
+    }
 }

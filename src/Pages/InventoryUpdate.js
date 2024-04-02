@@ -94,7 +94,7 @@ const InventoryUpdate = () => {
             sx={{ display: "flex", justifyContent: "center" }}
           >
             <Typography
-              className="good-receipt"
+              className="inventory-update-text"
               variant="h6"
               sx={{
                 background: "#1a1ac2",
@@ -126,7 +126,7 @@ const InventoryUpdate = () => {
             </Typography>
           </Box>
           <Paper sx={{ width: "100%" }} className="table-container">
-            <TableContainer sx={{ maxHeight: 600, overflowX: "auto" }} >
+            <TableContainer sx={{ maxHeight: 600, overflowX: "auto", mt:'20px' }} >
               <Table
                 stickyHeader
                 aria-label="sticky table"

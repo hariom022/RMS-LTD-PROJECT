@@ -1,10 +1,22 @@
-import { Typography, Box, Button, Divider, TableContainer } from "@mui/material";
+import {
+  Typography,
+  Box,
+  Button,
+  Divider,
+  TableContainer,
+} from "@mui/material";
 import React, { useState } from "react";
 import Sidebar from "../component/Sidebar";
 import { Link, NavLink } from "react-router-dom";
-import './NewRequest.scss'
-import { Table, TableHead, TableBody, TableRow, TableCell, Paper } from '@mui/material';
-
+import "./NewRequest.scss";
+import {
+  Table,
+  TableHead,
+  TableBody,
+  TableRow,
+  TableCell,
+  Paper,
+} from "@mui/material";
 
 const NewRequest = () => {
   const [dummyData, setDummyData] = useState([
@@ -31,54 +43,113 @@ const NewRequest = () => {
 
       amount: " $872.50",
     },
+    {
+      id: 106,
+      Quotation: "QTN-005",
+
+      amount: " $562.50",
+    },
+    {
+      id: 107,
+      Quotation: "QTN-005",
+
+      amount: " $542.50",
+    },
+    {
+      id: 108,
+      Quotation: "QTN-006",
+
+      amount: " $865.50",
+    },
   ]);
   const rejectDataHandler = (id) => {
     const res = dummyData.filter((dummyData) => dummyData.id !== id);
     setDummyData(res);
   };
   return (
-    <Box sx={{ display: {sm:"block", md:'block', lg:'flex'} }}>
+    <Box sx={{ display: { sm: "block", md: "block", lg: "flex" } }}>
       <Sidebar />
-      <Box component="main" sx={{ flexGrow: 1, p: 3, mt: "110px" }} className="main">
-        <Box sx={{ml:"60px"}}>
-        <Box sx={{display:'flex',justifyContent:'center', m:'0px 0px 40px 0px'}}>
-        <Typography className="qtn-approv-text" variant="h6" sx={{background: "#1a1ac2",borderRadius:'10px', textAlign:"center",color:'#fff'}} >Quotation Approval Section</Typography>
-        </Box>
-        
-        <Box>
-        <Paper>
-          <TableContainer>
-        <Table>
-        <TableHead>
-          <TableRow>
-            <TableCell sx={{ fontWeight: "bold", textAlign: "center" }}>ID</TableCell>
-            <TableCell sx={{ fontWeight: "bold", textAlign: "center" }}>Quotation</TableCell>
-            <TableCell sx={{ fontWeight: "bold", textAlign: "center" }}>Amount</TableCell>
-            <TableCell sx={{ fontWeight: "bold", textAlign: "center" }}>Approve or Reject</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {dummyData.map((item) => (
-            <TableRow key={item.id} className="newRequest-container">
-              <TableCell align="center">{item.id}</TableCell>
-              <TableCell align="center">{item.Quotation}</TableCell>
-              <TableCell align="center">{item.amount}</TableCell>
-              <TableCell align="center">
-                <Box>
-                  <NavLink to={'/quotationDetails'}>
-                  <Button className="approve-btn">Approve </Button>
-                  </NavLink>
-                  <Button className="reject-btn" onClick={()=>rejectDataHandler(item.id)}>Reject</Button>
-                </Box>
-              </TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-      
-      </TableContainer>
-      </Paper>
-        </Box>
+      <Box
+        component="main"
+        sx={{ flexGrow: 1, p: 3, mt: "110px" }}
+        className="main"
+      >
+        <Box sx={{ ml: "60px" }}>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              m: "0px 0px 40px 0px",
+            }}
+          >
+            <Typography
+              className="qtn-approv-text"
+              variant="h6"
+              sx={{
+                background: "#1a1ac2",
+                borderRadius: "10px",
+                textAlign: "center",
+                color: "#fff",
+              }}
+            >
+              Quotation Approval Section
+            </Typography>
+          </Box>
+
+          <Box>
+            <Paper>
+              <TableContainer sx={{mt:'20px'}}>
+                <Table>
+                  <TableHead>
+                    <TableRow>
+                      <TableCell
+                        sx={{ fontWeight: "bold", textAlign: "center" }}
+                      >
+                        ID
+                      </TableCell>
+                      <TableCell
+                        sx={{ fontWeight: "bold", textAlign: "center" }}
+                      >
+                        Quotation
+                      </TableCell>
+                      <TableCell
+                        sx={{ fontWeight: "bold", textAlign: "center" }}
+                      >
+                        Amount
+                      </TableCell>
+                      <TableCell
+                        sx={{ fontWeight: "bold", textAlign: "center" }}
+                      >
+                        Approve or Reject
+                      </TableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    {dummyData.map((item) => (
+                      <TableRow key={item.id} className="newRequest-container">
+                        <TableCell align="center">{item.id}</TableCell>
+                        <TableCell align="center">{item.Quotation}</TableCell>
+                        <TableCell align="center">{item.amount}</TableCell>
+                        <TableCell align="center">
+                          <Box>
+                            <NavLink to={"/quotationDetails"}>
+                              <Button className="approve-btn">Approve </Button>
+                            </NavLink>
+                            <Button
+                              className="reject-btn"
+                              onClick={() => rejectDataHandler(item.id)}
+                            >
+                              Reject
+                            </Button>
+                          </Box>
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </TableContainer>
+            </Paper>
+          </Box>
         </Box>
       </Box>
     </Box>

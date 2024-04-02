@@ -1,16 +1,13 @@
 .good-receipt {
-  width: 40%;
-}
-
-
-h6 {
+  width: 30%;
   background: #1a1ac2;
   display: flex;
   justify-content: center;
   border-radius: 50px;
   margin: 20px 0px;
   font-weight: bold;
-  padding: 10px 20px;
+  padding: 5px 10px;
+    font-size: 10px;
 }
 
 @media only screen and (max-width: 784px) {
@@ -23,3 +20,4 @@ h6 {
     width: 80%;
   }
 }
+
